@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <div className="logo">LOGO HERE</div>
+        <div className="logo">LOGO HERE OKs</div>
         <div className="nav">
           <button className="signup">Sign Up/Register</button>
           <div className="search-container">
