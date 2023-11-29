@@ -7,13 +7,23 @@ body {
   text-align: center;
 }
 
-
-.header {
+.headerContainer {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1;
+}
+
+.secondHeaderContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.mainheader {
   background: linear-gradient(to right, #000, #001f3f);
   color: white;
   padding: 15px;
@@ -22,40 +32,57 @@ body {
   align-items: center;
 }
 
-.logo {
-  font-size: 1.5rem;
+.secondSmallerHeader {
+  display: flex;
+  margin-top: 55px;
+  background: linear-gradient(to right, #0c0b0b, #04315e);
+  color: white;
+  padding: 5px;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
-.nav {
+.leftSideContainer {
+  display: flex;
+}
+
+.rightSideContainer {
+  display: flex;
+}
+.logo {
   display: flex;
   align-items: center;
+  width: 30px;
 }
 
 .search-container, .cart-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .signup {
-  margin-right: 15px;
+  margin-left: 15px;
   padding: 10px;
   background-color: #0074cc;
   color: white;
   border: none;
   cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .search-bar {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .search-bar input {
-  margin-right: 5px;
-
+  border: white;
+  opacity: 0.5;
+  font-size: large;
+  border-radius: 10px;
 }
-
 
 input[type="text"] {
   padding: 8px;
@@ -92,6 +119,16 @@ input[type="text"] {
   margin-left: 5px;
 }
 
+.secondSmallerHeader button {
+  display: flex;
+  padding: 10px;
+  background-color: #0074cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
 .background-section {
   background: linear-gradient(to right, #000, #001f3f);
   opacity: 1;
@@ -102,12 +139,14 @@ input[type="text"] {
   align-items: center;
   color: white;
   font-size: 2rem;
+  margin-top: 55px;
 }
 
 .background-left, .background-right {
   flex: 1;
   height: 100%;
   background-repeat: no-repeat;
+  opacity: 0.5;
 }
 
 .background-left {
