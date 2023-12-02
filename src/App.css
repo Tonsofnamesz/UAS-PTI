@@ -1,10 +1,11 @@
-
 body {
   margin: 0;
 }
 
 .App {
   text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background: linear-gradient(to right, #000, #001f3f);
 }
 
 .headerContainer {
@@ -69,6 +70,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .search-bar {
@@ -87,6 +89,7 @@ body {
 input[type="text"] {
   padding: 8px;
   margin-right: 8px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .search-button {
@@ -113,6 +116,7 @@ input[type="text"] {
   border: none;
   cursor: pointer;
   margin-right: 5px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .cart-text {
@@ -127,6 +131,7 @@ input[type="text"] {
   border: none;
   cursor: pointer;
   margin-right: 5px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .background-section {
@@ -172,4 +177,81 @@ input[type="text"] {
   margin-top: 200px;
   max-width: 100%;
   height: auto;
+}
+
+.featured {
+  background: linear-gradient(to right, #000, #001f3f);
+  margin-top: 100px;
+  opacity: 1;
+  display: flex;
+  color: white;
+  font-size: 4rem;
+  text-align: left;
+  height: 80px;
+}
+
+.mainItemCards {
+  display: flex;
+  padding: 10px;
+}
+
+.itemCardContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  background: linear-gradient(to right, #000, #001f3f);
+  padding: 10px;
+}
+
+.itemCard {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  background: rgba(255, 255, 255, 0.178);
+  padding: 10px; 
+  border-radius: 10px; 
+  border: white;
+  width: 250px;
+  height: 200px;
+}
+
+.itemCard img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.itemCard p {
+  margin: 0;
+  color: white;
+  word-wrap: break-word;
+}
+
+.showAllButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.showAllButton button {
+  background: rgba(255, 255, 255, 0.178);
+  color: white;
+  border: none;
+  width: 250px;
+  height: 222px;
+  border-radius: 10px;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.Recommended {
+  background: linear-gradient(to right, #000, #001f3f);
+  opacity: 1;
+  display: flex;
+  color: white;
+  font-size: 4rem;
+  text-align: left;
+  height: 80px;
 }
