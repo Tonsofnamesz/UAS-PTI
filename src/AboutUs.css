@@ -1,0 +1,41 @@
+.AboutUS {
+    background-color: linear-gradient(to right, #000, #001f3f);
+}
+
+.AboutUS h1 {
+    padding-top: 120px;
+    color: white;
+}
+.aboutUsContainer {
+    background-color: rgba(255, 255, 255, 0.116);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 90%; /* Stretch to both ends of the screen */
+    padding: 20px; /* Add padding for better readability */
+    box-sizing: border-box;
+    margin-left: 80px;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+  
+.aboutUsImage {
+    max-width: 50%; /* Adjust the width of the image */
+    height: auto;
+    margin-right: 20px; /* Add margin between image and text */
+    border-radius: 20px;
+}
+  
+.aboutUsInfo {
+    flex-grow: 1; /* Allow the text to grow and take up available space */
+    color: white;
+}
+  
+.aboutUsName {
+    margin-top: 0; /* Remove default margin for better alignment */
+}
+  
+.aboutUsQuote {
+    margin-bottom: 0; /* Remove default margin for better alignment */
+    color: white;
+}
