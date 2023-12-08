@@ -17,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Routes path="/signup" element={<LoginSignup />} />
       <div className="headerContainer">
           <Header />
         </div>
@@ -25,7 +26,6 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/signup" element={<LoginSignup />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="{`/product/${item.id}`}" element={<ProductDetail />} />
           <Route path="/about-us" element={<AUS />} />
