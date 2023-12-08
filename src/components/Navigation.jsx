@@ -8,7 +8,6 @@ const Navigation = () => (
     </button>
     <button>All</button>
     <button>Today's Deals</button>
-    <button>Sell</button>
   </header>
 );
 

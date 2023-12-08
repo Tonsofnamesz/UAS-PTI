@@ -11,6 +11,7 @@ import ReturnRefund from './components/Return&Refund';
 import ProductDetail from './components/ProductDetail';
 import LoginSignup from './components/LoginSignup';
 import Cart from './components/Cart';
+import Account from './components/Account';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<LoginSignup />} />
+          <Route path="/account" element={<Account />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="{`/product/${item.id}`}" element={<ProductDetail />} />
           <Route path="/about-us" element={<AUS />} />
