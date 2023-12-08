@@ -8,7 +8,7 @@ const Header = () => (
   <header className="mainheader">
     <div className="leftSideContainer">
       <img src={logosmall} alt="logo" className="logo" />
-      <Link to="/signup" className="signup">Sign Up/Register Bahar</Link>
+      <Link to="/signup" className="signup">Sign Up/Register</Link>
     </div>
     <div className="rightSideContainer">
       <div className="search-container">

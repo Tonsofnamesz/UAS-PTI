@@ -1,10 +1,19 @@
 import React from "react";
 import '../AboutUs.css';
 import RyanPic from '../pics/Thumbnails/The Unknown.jpg';
+import Header from '../Header';
+import Navigation from './Navigation';
+import Footer from '../Footer';
 
 const AUS  = () => {
     return (
         <div className="AboutUS">
+            <div className="headerContainer">
+          <Header />
+        </div>
+      <div className="secondHeaderContainer">
+          <Navigation />
+        </div>
             <h1>About Us</h1>
             <div className="aboutUsContainer">
                 <img src={RyanPic} className="aboutUsImage" />
@@ -22,6 +31,7 @@ const AUS  = () => {
                     <p className="aboutUsQuote">PIPEBOMB</p>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

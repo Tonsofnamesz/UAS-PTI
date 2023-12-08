@@ -1,9 +1,19 @@
 import React from 'react';
 import '../TermsConds.css';
+import Header from '../Header';
+import Navigation from './Navigation';
+import Footer from '../Footer';
 
 const ReturnRefund = () => {
     return (
+        <div>
         <div className="TermsStuff">
+            <div className="headerContainer">
+          <Header />
+        </div>
+      <div className="secondHeaderContainer">
+          <Navigation />
+        </div>
             <h1>Return & Refund Policies</h1>
             <h2>Cancellation</h2>
             <p>If your order hasn’t been processed yet, we will help you to change the items you wish to replace.</p>
@@ -34,6 +44,9 @@ const ReturnRefund = () => {
             <p>If you have not received a refund after a week has gone by, please check your bank account again. You should also contact your credit card company. It may take some time before your refund is fully processed.</p>
             <p>You can also contact your bank. There is often some processing time before a refund is processed.</p>
         </div>
+        <Footer />
+        </div>
+        
     );
 };
 
