@@ -11,7 +11,7 @@ const Account = () => {
     const [wishlistVisible, setWishlistVisible] = useState(false);
     const [balanceVisible, setBalanceVisible] = useState(false);
     const [wishlistItems, setWishlistItems] = useState([""]);
-    const [userBalance, setUserBalance] = useState(""); // State for user balance input
+    const [userBalance, setUserBalance] = useState("");
   
     const handleWishlistClick = () => {
       setWishlistVisible(!wishlistVisible);
@@ -23,7 +23,6 @@ const Account = () => {
       setWishlistVisible(false); // Close the wishlist dropdown if open
     };
   
-    // Calculate the height of the main container dynamically based on dropdown visibility
     const mainContainerStyle = {
       height: wishlistVisible || balanceVisible ? "300px" : "150px", // Adjust the heights as needed
     };
