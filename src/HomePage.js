@@ -3,6 +3,9 @@ import axios from 'axios';
 import { Link } from 'react-router-dom'; 
 import logo from './pics/Thumbnails/LogoWhole.png';
 import ProductDetail from "./components/ProductDetail";
+import Navigation from './components/Navigation';
+import Header from './Header';
+import Footer from './Footer';
 
 export const HomePage = () => {
   
@@ -48,6 +51,12 @@ export const HomePage = () => {
     <div>    
     <div className="Stuffs">
       </div>
+      <div className="headerContainer">
+          <Header />
+        </div>
+      <div className="secondHeaderContainer">
+          <Navigation />
+        </div>
       <div className="content">
         <div className="background-section">
           <div className="background-left"></div>
@@ -98,6 +107,7 @@ export const HomePage = () => {
               <button>All</button>
             </div>
         </div>
+            <Footer />
         </div>
     </div>
   );
