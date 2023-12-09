@@ -19,32 +19,44 @@ export const HomePage = () => {
     fetchData();
   }, []);
 
-  const fetchData = () => {
-    axios.get("https://fakestoreapi.com/products")
-      .then((response) => {
-        const data = response.data;
-        const shuffledItems = data.sort(() => 0.5 - Math.random());
-        const previewFeutItems = shuffledItems.slice(0, 5);
-        const previewReccItems = shuffledItems.slice(5, 10);
-        const previewAllItems = shuffledItems.slice(10, 15);
-        
-        setPreviewFeutItems(previewFeutItems);
-        setPreviewReccItems(previewReccItems);
-        setPreviewAllItems(previewAllItems);
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
-  };
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("https://fakestoreapi.com/products");
+      const data = response.data;
+      const shuffledItems = data.sort(() => 0.5 - Math.random());
+      const previewFeutItems = shuffledItems.slice(0, 5);
+      const previewReccItems = shuffledItems.slice(5, 10);
+      const previewAllItems = shuffledItems.slice(10, 15);
+      
+      setPreviewFeutItems(previewFeutItems);
+      setPreviewReccItems(previewReccItems);
+      setPreviewAllItems(previewAllItems);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+ };
+
+  /* const fetchData = async () => {
+    try {
+      const response = await axios.get("https://fakestoreapi.com/products");
+      const data = response.data;
+      const shuffledItems = data.sort(() => 0.5 - Math.random());
+      const previewFeutItems = shuffledItems.slice(0, 5);
+      const previewReccItems = shuffledItems.slice(5, 10);
+      const previewAllItems = shuffledItems.slice(10, 15);
+      
+      setPreviewFeutItems(previewFeutItems);
+      setPreviewReccItems(previewReccItems);
+      setPreviewAllItems(previewAllItems);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+ };*/
 
   const handleProductClick = (product) => {
     setSelectedProduct(product);
   };
 
-  const handleAddToCart = (product) => {
-    // Add the selected product to the cart
-    setCart([...cart, product]);
-  };
 
   return (
 
@@ -68,11 +80,15 @@ export const HomePage = () => {
         <div className="featured">Featured</div>
         <div className="itemCardContainer">
         {previewFeutItems.map((item) => (
-          <Link to={`/product/${item.id}`} key={item.id} className="itemCard" onClick={() => handleProductClick(item)}>
-            <img src={item.image} alt={item.title} />
-            <p>{item.title}</p>
-            <p>Price: ${item.price}</p>
-          </Link>
+              <Link to={{
+                pathname: '/product/${item.id}',
+                state: { product: item }
+              }} key={item.id} className="itemCard">
+                <img src={item.image} alt={item.title} />
+                <p>{item.title}</p>
+                <p>Price: ${item.price}</p>
+              </Link>
+              
             ))}
             <div>
             {selectedProduct && <ProductDetail product={selectedProduct} />}
@@ -82,31 +98,37 @@ export const HomePage = () => {
             </div>
         </div>
         <div className="Recommended">Recommended For You!</div>
-        <div className="itemCardContainer">
-          {previewReccItems.map((item) => (
-              <div key={item.id} className="itemCard">
+          <div className="itemCardContainer">
+            {previewReccItems.map((item) => (
+              <Link to={{
+                pathname: '/product/${item.id}',
+                state: { product: item }
+              }} key={item.id} className="itemCard">
                 <img src={item.image} alt={item.title} />
                 <p>{item.title}</p>
                 <p>Price: ${item.price}</p>
-              </div>
+              </Link>
             ))}
             <div className="showAllButton">
               <button>All</button>
             </div>
-            </div>
+          </div>
           <div className="AllPreview">Today's Deals</div>
           <div className="itemCardContainer">
-          {previewAllItems.map((item) => (
-              <div key={item.id} className="itemCard">
+            {previewAllItems.map((item) => (
+              <Link to={{
+                pathname: '/product/${item.id}',
+                state: { product: item }
+              }} key={item.id} className="itemCard">
                 <img src={item.image} alt={item.title} />
                 <p>{item.title}</p>
                 <p>Price: ${item.price}</p>
-              </div>
+              </Link>
             ))}
             <div className="showAllButton">
               <button>All</button>
             </div>
-        </div>
+          </div>
             <Footer />
         </div>
     </div>

@@ -1,5 +1,8 @@
-import React from "react";
-import "./ContactUs.css";
+import React, { useState } from "react";
+import "../ContactUs.css";
+import Header from '../Header';
+import Navigation from './Navigation';
+import Footer from '../Footer';
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -26,6 +29,14 @@ function ContactForm() {
   };
 
   return (
+    <div>
+      <div className="Account">
+         <div className="headerContainer">
+          <Header />
+        </div>
+      <div className="secondHeaderContainer">
+          <Navigation />
+        </div>
     <div className="contact-form-container">
       <h2>Contact Us</h2> {"Contact Us"}
       <form onSubmit={handleSubmit}>
@@ -67,12 +78,11 @@ function ContactForm() {
         <p>E-MAIL: IVENIRE.GRIFFON@EMAIL.COM</p>
         <p>SCIENTIA PARK NO 35, INDONESIA</p>
       </div>
-      <footer className="contact-footer">
-        <p>© 2023 IVENIRE GRIFFON. All rights reserved.</p>
-        <p>Privacy Policy | Terms of Service</p>
-      </footer>
+    </div>
+    </div>
+    <Footer />
     </div>
   );
 }
 
-export default Contact;
+export default ContactForm;
