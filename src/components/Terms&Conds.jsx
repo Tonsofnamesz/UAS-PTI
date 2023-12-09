@@ -1,19 +1,9 @@
 import React from 'react';
 import '../TermsConds.css';
-import Header from '../Header';
-import Navigation from './Navigation';
-import Footer from '../Footer';
 
 const TermsandConds = () => {
   return (
-    <div>
     <div className="TermsStuff">
-      <div className="headerContainer">
-          <Header />
-        </div>
-      <div className="secondHeaderContainer">
-          <Navigation />
-        </div>
       <h1>Terms & Conditions</h1>
       <h2>OVERVIEW</h2>
       <p>
@@ -310,8 +300,6 @@ const TermsandConds = () => {
       <p>
       Questions about the Terms of Service should be sent to us at contact@inveniregriffon
       </p>
-    </div>
-    <Footer />
     </div>
   );
 };

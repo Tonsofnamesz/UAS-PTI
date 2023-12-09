@@ -46,3 +46,7 @@
   .addToCartButton:hover {
     background-color: #0056b3;
   }
+
+  .productDetail {
+    font-size: 2em; /* Adjust this value to your liking */
+  }

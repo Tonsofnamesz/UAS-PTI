@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { Provider } from 'react-redux'; // Import Provider
+import store from './store'; // Import your Redux store
 import './App.css';
-import store from './store';
+import Footer from './Footer';
 import HomePage from './HomePage';
+import Header from './components/Header';
+import Navigation from './components/Navigation';
 import TermsConds from './components/Terms&Conds';
 import AUS from './components/AboutUS';
 import Privacy from './components/PrivacyPolicies';
 import ReturnRefund from './components/Return&Refund';
 import ProductDetail from './components/ProductDetail';
-import LoginSignup from './components/LoginSignup';
-import Cart from './components/Cart';
-import Account from './components/Account';
-import ContactForm from './components/ContactUs';
-
+import Cart from './components/Cart'; 
 
 function App() {
-
   const [cart, setCart] = useState([]);
 
   const handleAddToCart = (product) => {
@@ -24,51 +22,22 @@ function App() {
   };
 
   return (
-    <Provider store={store}> 
-  <div className="App">
-      <Router>
-        <Routes>
-        <Route path="/" element={<HomePage handleAddToCart={handleAddToCart} />} />
-          <Route path="/product/:id" element={<ProductDetail handleAddToCart={handleAddToCart} />} />
-          <Route path="/signup" element={<LoginSignup />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/about-us" element={<AUS />} />
-          <Route path="/contact-us" element={<ContactForm />} />
-          <Route path="/terms-conditions" element={<TermsConds />} />
-          <Route path="/privacy-policies" element={<Privacy />} />
-          <Route path="/return-refund-policies" element={<ReturnRefund />} />
-        </Routes>
-    </Router>
-    </div>
-</Provider>
+    <Provider store={store}> {/* Wrap your application with Provider */}
+      <div className="App">
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage handleAddToCart={handleAddToCart} />} />
+            <Route path="/product/:id" element={<ProductDetail handleAddToCart={handleAddToCart} />} />
+            <Route path="/cart" element={<Cart />} /> 
+            <Route path="/about-us" element={<AUS />} />
+            <Route path="/terms-conditions" element={<TermsConds />} />
+            <Route path="/privacy-policies" element={<Privacy />} />
+            <Route path="/return-refund-policies" element={<ReturnRefund />} />
+          </Routes>
+        </Router>
+      </div>
+    </Provider>
   );
 }
 
 export default App;
-
-
-/*
-<Provider store={store}> 
-  <div className="App">
-      <Router>
-        <Routes>
-        <Route path="/" element={<HomePage handleAddToCart={handleAddToCart} />} />
-          <Route path="/product/:id" element={<ProductDetail handleAddToCart={handleAddToCart} />} />
-          <Route path="/signup" element={<LoginSignup />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/about-us" element={<AUS />} />
-          <Route path="/contact-us" element={<ContactForm />} />
-          <Route path="/terms-conditions" element={<TermsConds />} />
-          <Route path="/privacy-policies" element={<Privacy />} />
-          <Route path="/return-refund-policies" element={<ReturnRefund />} />
-        </Routes>
-    </Router>
-    </div>
-</Provider>
-
-
-
-
-*/

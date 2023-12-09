@@ -61,7 +61,7 @@ body {
   display: flex;
 }
 
-.signup, .account {
+.signup {
   margin-left: 15px;
   padding: 10px;
   background-color: #0074cc;
@@ -295,7 +295,6 @@ a {
   text-align: center;
   color: white;
   background: linear-gradient(to right, #000, #001f3f);
-  padding-bottom: 10px;
 }
 
 a:hover {
