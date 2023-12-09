@@ -61,7 +61,20 @@ body {
   display: flex;
 }
 
-.signup {
+Link {
+  margin-left: 15px;
+  padding: 10px;
+  background-color: #0074cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.signup, .account {
   margin-left: 15px;
   padding: 10px;
   background-color: #0074cc;

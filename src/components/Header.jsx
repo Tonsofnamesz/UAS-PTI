@@ -8,7 +8,12 @@ const Header = () => (
   <header className="mainheader">
     <div className="leftSideContainer">
       <img src={logosmall} alt="logo" className="logo" />
-      <button className="signup">Sign Up/Register</button>
+      <button className="signup">
+        <Link to="/signup">Register/Login</Link>
+      </button>
+      <button className="account">
+      <Link to="/account">Account</Link>
+      </button>
     </div>
     <div className="rightSideContainer">
       <div className="search-container">
@@ -20,7 +25,7 @@ const Header = () => (
         </div>
       </div>
       <div className="cart-container">
-        <Link to="/cart"> {/* Add Link component here */}
+        <Link to="/cart">
           <button className="cart-button">
             <img src={CartIcon} alt="Cart" />
             <span className="cart-text">Cart</span>

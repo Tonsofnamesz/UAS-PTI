@@ -1,8 +1,18 @@
 import React from 'react';
 import '../TermsConds.css';
+import Header from './Header';
+import Navigation from './Navigation';
+import Footer from '../Footer';
 
 const Privacy = () => {
     return (
+        <div>
+            <div className="headerContainer">
+          <Header />
+        </div>
+      <div className="secondHeaderContainer">
+          <Navigation />
+        </div>
         <div className="TermsStuff">
             <h1>Privacy Policies</h1>
             <h2>SECTION 1 – WHAT DO WE DO WITH YOUR INFORMATION?</h2>
@@ -75,6 +85,8 @@ const Privacy = () => {
             <p>
             If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.
             </p>
+        </div>
+        <Footer />
         </div>
     );
 };
