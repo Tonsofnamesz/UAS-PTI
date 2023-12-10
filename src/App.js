@@ -12,6 +12,7 @@ import ProductDetail from './components/ProductDetail';
 import Cart from './components/Cart'; 
 import Account from './components/Account';
 import LoginSignup from './components/LoginSignup';
+import ContactForm from './components/ContactUs';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -34,6 +35,7 @@ function App() {
             <Route path="/terms-conditions" element={<TermsConds />} />
             <Route path="/privacy-policies" element={<Privacy />} />
             <Route path="/return-refund-policies" element={<ReturnRefund />} />
+            <Route path="/contact-us" element={<ContactForm />} />
           </Routes>
         </Router>
       </div>

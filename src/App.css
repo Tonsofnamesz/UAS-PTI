@@ -308,6 +308,7 @@ a {
   text-align: center;
   color: white;
   background: linear-gradient(to right, #000, #001f3f);
+  padding-bottom: 15px;
 }
 
 a:hover {
