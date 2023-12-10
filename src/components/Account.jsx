@@ -1,5 +1,3 @@
-// Account.js
-
 import React, { useState } from "react";
 import profilePic from '../pics/Thumbnails/blank-profile-pic.png';
 import '../Account.css';
@@ -9,15 +7,91 @@ import Footer from '../Footer';
 
 const Account = () => {
   const [selectedButton, setSelectedButton] = useState("UserProfileInfo");
+  const [userData, setUserData] = useState({
+    userName: localStorage.getItem('userName') || '', // Get the user's name from local storage
+    email: '',
+    password: '',
+    address: '',
+    country: '',
+    zipCode: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setUserData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+  };
 
   const renderContent = () => {
     switch (selectedButton) {
       case "UserProfileInfo":
         return (
-          <div>
-            {/* Render User Profile Info content */}
-            <p>User's name, email, password, address, etc.</p>
-          </div>
+          <form onSubmit={handleFormSubmit}>
+            <div>
+              <label htmlFor="userName">User's Name:</label>
+              <input
+                type="text"
+                id="userName"
+                name="userName"
+                value={userData.userName}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={userData.email}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={userData.password}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="address">Address:</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                value={userData.address}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="country">Country:</label>
+              <input
+                type="text"
+                id="country"
+                name="country"
+                value={userData.country}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="zipCode">Zip Code:</label>
+              <input
+                type="text"
+                id="zipCode"
+                name="zipCode"
+                value={userData.zipCode}
+                onChange={handleInputChange}
+              />
+            </div>
+            <button type="submit">Save Changes</button>
+          </form>
         );
       case "PasswordManagement":
         return (

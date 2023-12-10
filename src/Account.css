@@ -13,7 +13,10 @@
 .LeftSideAccountContainer {
   display: flex;
   flex-direction: column;
-  margin: 20px;
+  margin-left: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 
 .ProfileContainerTopLeft {
@@ -65,13 +68,49 @@
 .RightSideAccountContainer {
   display: flex;
   margin-top: 20px;
+  border: 2px solid white;
 }
 
 .NavContentsContainerRight {
-  background-color: #f0f0f0;
+  display: flex;
+  width: 400px;
+  margin-bottom: 20px;
 }
 
+.NavContentsContainerRight form {
+  display: grid;
+  gap: 15px;
+}
 
+.NavContentsContainerRight div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.NavContentsContainerRight input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px; /* Add a little margin for spacing between input fields */
+}
+
+.NavContentsContainerRight button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px; /* Add margin to separate the button from the inputs */
+}
+
+.NavContentsContainerRight button:hover {
+  background-color: #45a049;
+}
 
 
 
