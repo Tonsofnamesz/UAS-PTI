@@ -6,6 +6,9 @@ body {
   text-align: center;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   background: linear-gradient(to right, #000, #001f3f);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .headerContainer {
@@ -282,7 +285,7 @@ input[type="text"] {
 
 
 footer {
-  margin-top: 20px;
+  margin-top: auto;
   display: flex;
   justify-content: space-around;
   background-color: #333;

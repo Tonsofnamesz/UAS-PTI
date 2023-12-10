@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import { Provider } from 'react-redux'; // Import Provider
-import store from './store'; // Import your Redux store
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store, { addToCart } from './store';
 import './App.css';
 import HomePage from './HomePage';
 import TermsConds from './components/Terms&Conds';
@@ -15,19 +15,13 @@ import LoginSignup from './components/LoginSignup';
 import ContactForm from './components/ContactUs';
 
 function App() {
-  const [cart, setCart] = useState([]);
-
-  const handleAddToCart = (product) => {
-    setCart([...cart, product]);
-  };
-
   return (
     <Provider store={store}>
       <div className="App">
         <Router>
           <Routes>
-            <Route path="/" element={<HomePage handleAddToCart={handleAddToCart} />} />
-            <Route path="/product/:id" element={<ProductDetail handleAddToCart={handleAddToCart} />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/signup" element={<LoginSignup />} />
             <Route path="/account" element={<Account />} />
             <Route path="/cart" element={<Cart />} /> 
