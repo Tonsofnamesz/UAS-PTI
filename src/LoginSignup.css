@@ -1,12 +1,35 @@
-.LoginSign {
-    background-image: url('pics/Background_Imgs/bg.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
+@font-face {
+    font-family: 'Butler-Medium';  /* you can choose any name */
+    src: url('../src/fonts/Butler_Medium_Stencil.otf');  /* replace with the actual path to your font file */
 }
 
-.TopSpacing {
-    height: 200px;
+@font-face {
+    font-family: 'Noto-Reguler';  /* you can choose any name */
+    src: url('../src/fonts/NotoSansDisplay-Regular.ttf');  /* replace with the actual path to your font file */
+}
+
+@font-face {
+    font-family: 'Noto-Light';  /* you can choose any name */
+    src: url('../src/fonts/NotoSansDisplay-Light.ttf');  /* replace with the actual path to your font file */
+}
+
+@font-face {
+    font-family: 'Cyberpunk';  /* you can choose any name */
+    src: url('../src/fonts/Cyberpunk.ttf');  /* replace with the actual path to your font file */
+}
+
+.Footer{
+    width: auto;
+    top: 1000px;
+}
+
+.LoginSign {
+    background: url('../src/pics/Background_Imgs/loginpagebg2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100vw;
+    flex-grow: 1;
 }
 
 .Logincontainer{
@@ -14,12 +37,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: auto;
+    margin-left: 190px;
     margin-right: auto;
-    width: 600px;
-    background: linear-gradient(to right, #0000006b, #001f3f91);
-    padding-bottom: 30px;
-    border-radius: 30px;
+    margin-top: 50px;
+    height: 530px;
+    width: 470px;
+    background: 
+    repeating-linear-gradient(
+      to bottom,
+      rgba(135,206,235,0.5),
+      rgba(135,206,235,0.5) 2px,
+      rgba(173,216,230,0.5) 2px,
+      rgba(173,216,230,0.5) 4px
+    );
+    box-shadow: 0 0 5px #00c6ff, /* Inner glow */
+              0 0 15px #00c6ff, /* Middle glow */
+              0 0 25px #00c6ff, /* Outer glow */
+              0 0 35px #00c6ff;
 }
 
 .header{
@@ -32,20 +66,29 @@
 }
 
 .text{
-    color: white;
-    font-size: 48px;
+    color: #edf4ff;
+    font-size: 27px;
     font-weight: 700;
+    font-family: 'Noto-Reguler'; 
+    text-shadow: 0 0 1px #c6edf8, 0 0 11px #c6edf8, 0 0 21px #c6edf8, 0 0 31px #c6edf8;
 }
 
 .underline{
-    width: 61px;
+    width: 420px;
     height: 6px;
-    background: #111;
+    background: 
+    repeating-linear-gradient(
+      to bottom,
+      rgba(135,206,235,0.5),
+      rgba(135,206,235,0.5) 2px,
+      rgba(173,216,230,0.5) 2px,
+      rgba(173,216,230,0.5) 4px
+    );
     border-radius: 9px;
 }
 
 .inputs{
-    margin-top: 55px;
+    margin-top: 35px;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -55,8 +98,8 @@
     display: flex;
     align-items: center;
     margin: auto;
-    width: 480px;
-    height: 80px;
+    width: 420px;
+    height: 50px;
     background: #111;
     border-radius: 6px;
 }
@@ -66,14 +109,14 @@
 }
 
 .input input{
-    height: 50px;
+    height: 30px;
     width: 400px;
-    background: #000;
+    background: #111;
     border: none;
     outline: none;
     color: white;
-    font-size: 19px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 13px;
+    font-family: 'Noto-Reguler';
 }
 
 .forgot-password{
@@ -82,34 +125,148 @@
     margin-right: 40px;
     color: white;
     font-size: 18px;
+    font-family: 'Noto-Light';
 }
 
 .forgot-password span{
-    color: #4c00b4;
+    color: #569fff;
     cursor: pointer;
 }
 
-.submit-container{
+.submit-container {
     display: flex;
     gap: 30px;
-    margin: 60px auto;
+    margin-top: 15px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.submit{
+.submit {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 220px;
-    height: 59px;
-    color: #fff;
-    background: #003569;
+    width: 180px; /* Reduced size */
+    height: 45px; /* Reduced size */
+    color: #fff; /* White text color */
+    background: linear-gradient(to bottom, #000611, #06132a); /* White background */
     border-radius: 50px;
-    font-size: 19px;
+    font-size: 16px; /* Reduced font size */
     font-weight: 700;
+    font-family: 'Noto-Reguler';
     cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out; /* Transition for smooth shrinking and color change */
 }
+
+.submit:hover {
+    transform: scale(0.9); /* Shrink on hover */
+    color: #00c6ff; /* Neon text color on hover */
+    box-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff, 0 0 30px #00c6ff, 0 0 40px #00c6ff; /* Neon glow on hover */
+}
+
+
 
 .gray{
     background: #111;
     color: white;
+}
+
+.Element1 {
+    position: absolute;
+    right: 0;
+    bottom: -150px;
+    height: 1110px;
+    overflow: hidden;
+}
+
+.Element1 img {
+    height: 100%;
+    width: 100%;
+    margin-top: 150px;
+}
+
+.Element1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;  
+    /*background: linear-gradient(to right, rgb(245, 245, 245), transparent);*/
+}
+
+.WebTitle {
+    margin-left: 11px;
+    margin-top: 20px;
+    margin-right: 692px;
+    font-family: 'Butler-Medium';
+    font-size: 3em; 
+    font-weight: bold;  
+    color: #e0e0e0;  
+    text-align: center; 
+}
+
+.WebTitle2 {
+    color: #00c6ff;
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    bottom: 140px; /* Position from the bottom */
+    right: 150px; /* Position from the right */
+    font-size: 70px;
+    font-family: 'Cyberpunk';
+    text-shadow: 0 0 4px #00c6ff, /* Inner glow */
+              0 0 14px #00c6ff, /* Middle glow */
+              0 0 24px #00c6ff, /* Outer glow */
+              0 0 34px #00c6ff;
+  }
+
+  .WebTitle3 {
+    color: rgba(224, 221, 221);
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    bottom: 65px; /* Position from the bottom */
+    right: 70px; /* Position from the right */
+    font-size: 70px;
+    font-family: 'Cyberpunk';
+    text-shadow: 0 0 4px #edfbff, /* Inner glow */
+              0 0 14px #edfbff, /* Middle glow */
+              0 0 24px #edfbff, /* Outer glow */
+              0 0 34px #edfbff;
+  }
+
+.LoginVectorUp {
+    position: absolute;
+    z-index: 2;
+    top: 115px;
+    left: 25px; 
+  }
+
+.LoginVectorUp img{
+    height: 67%;
+    width: 67%;
+}
+
+.LoginVectorDown{
+    position: absolute;
+    z-index: 2;
+    bottom: 15px;
+    left: 11;
+}
+
+.LoginVectorDown img{
+    height: 67%;
+    width: 67%;
+}
+
+.Element5 {
+    position: absolute;
+    top: 41%; /* This will position the element halfway down its parent container */
+    left: 0;
+    right: 62px;
+    z-index: 3; /* This will ensure the element is above other elements with a lower z-index */
+    transform: rotate(90deg); /* This will move the element up by half its height, centering it vertically */
+}
+
+.Element5 img {
+    width: 30%; /* Adjust this value as needed */
+    height: auto; /* This will scale the height while maintaining the aspect ratio */
+    filter: sepia(100%) saturate(200%) hue-rotate(160deg);
 }

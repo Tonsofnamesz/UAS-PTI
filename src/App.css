@@ -5,7 +5,7 @@ body {
 .App {
   text-align: center;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  background: linear-gradient(to right, #000, #001f3f);
+  background-color: #0a101e;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -283,14 +283,16 @@ input[type="text"] {
   height: 80px;
 }
 
-
 footer {
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
   margin-top: auto;
   display: flex;
   justify-content: space-around;
-  background-color: #333;
+  background: linear-gradient(to bottom, #000611, #06132a); /* subtle gradient from dark grey-blueish to really dark grey */
   color: #fff;
   padding: 20px;
+  box-shadow: 0 0 2px #00c6ff, 0 0 12px #00c6ff, 0 0 22px #00c6ff, 0 0 32px #00c6ff; /* neon glowing outline */
 }
 
 ul {
@@ -300,6 +302,26 @@ ul {
 
 li {
   margin-bottom: 8px;
+  position: relative;
+}
+
+li::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #00c6ff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  box-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff, 0 0 30px #00c6ff, 0 0 40px #00c6ff;
+}
+
+li:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 a {
@@ -310,10 +332,34 @@ a {
 .copyright {
   text-align: center;
   color: white;
-  background: linear-gradient(to right, #000, #001f3f);
+  background: linear-gradient(to bottom, #06132a, #000611);
   padding-bottom: 15px;
 }
 
 a:hover {
   text-decoration: underline;
 }
+
+h2 {
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #00c6ff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  box-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff, 0 0 30px #00c6ff, 0 0 40px #00c6ff;
+}
+
+h2:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+

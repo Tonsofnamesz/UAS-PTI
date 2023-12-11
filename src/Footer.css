@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Noto-Reguler';  /* you can choose any name */
+    src: url('../src/fonts/NotoSansDisplay-Regular.ttf');  /* replace with the actual path to your font file */
+}
+
+@font-face {
+    font-family: 'Novecento-Light';
+    src: url('../src/fonts/Novecento\ Light.ttf');
+}
+
+.FooterContainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding-top: 55px;
+    font-family: 'Novecento-Light';
+}
+
+.Element4 {
+    position: absolute;
+    top: -7px;
+    left: 0;
+    z-index: 2;
+    /*box-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff, 0 0 30px #00c6ff, 0 0 40px #00c6ff;*/
+}
+
+.Element4 img{
+    width: 100%;
+    height: auto;
+    filter: sepia(100%) saturate(200%) hue-rotate(165deg);
+}
+
+footer div{
+    padding-top: 50px;
+}
