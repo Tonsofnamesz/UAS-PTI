@@ -9,7 +9,7 @@ import Footer from '../Footer';
 const Account = () => {
   const [selectedButton, setSelectedButton] = useState("UserProfileInfo");
   const [userData, setUserData] = useState({
-    userName: localStorage.getItem('userName') || '', // Get the user's name from local storage
+    userName: localStorage.getItem('userName') || '',
     email: '',
     password: '',
     address: '',

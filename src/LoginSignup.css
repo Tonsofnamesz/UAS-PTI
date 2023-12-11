@@ -18,18 +18,11 @@
     src: url('../src/fonts/Cyberpunk.ttf');  /* replace with the actual path to your font file */
 }
 
-.Footer{
-    width: auto;
-    top: 1000px;
-}
-
 .LoginSign {
     background: url('../src/pics/Background_Imgs/loginpagebg2.png');
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
-    width: 100vw;
-    flex-grow: 1;
 }
 
 .Logincontainer{
@@ -54,15 +47,6 @@
               0 0 15px #00c6ff, /* Middle glow */
               0 0 25px #00c6ff, /* Outer glow */
               0 0 35px #00c6ff;
-}
-
-.header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 9px;
-    width: 100%;
-    margin-top: 30px;
 }
 
 .text{
@@ -171,21 +155,19 @@
     color: white;
 }
 
-.Element1 {
+.RightSideContainer {
     position: absolute;
-    right: 0;
-    bottom: -150px;
-    height: 1110px;
-    overflow: hidden;
-}
+    top: 0;
+    left: 1100px;
+    height: 100vh;
+  }
 
-.Element1 img {
-    height: 100%;
+.RightSideContainer img {
+    height: 120%;
     width: 100%;
-    margin-top: 150px;
-}
+ }
 
-.Element1::after {
+.RightSideContainer::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -196,9 +178,10 @@
 }
 
 .WebTitle {
-    margin-left: 11px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 190px;
     margin-top: 20px;
-    margin-right: 692px;
     font-family: 'Butler-Medium';
     font-size: 3em; 
     font-weight: bold;  
@@ -207,11 +190,14 @@
 }
 
 .WebTitle2 {
+    display: flex;
+    justify-content: center;
     color: #00c6ff;
+    margin-right: 20px;
     position: absolute; /* Position relative to the nearest positioned ancestor */
     bottom: 140px; /* Position from the bottom */
     right: 150px; /* Position from the right */
-    font-size: 70px;
+    font-size: 80px;
     font-family: 'Cyberpunk';
     text-shadow: 0 0 4px #00c6ff, /* Inner glow */
               0 0 14px #00c6ff, /* Middle glow */
@@ -220,11 +206,12 @@
   }
 
   .WebTitle3 {
+    display: flex;
     color: rgba(224, 221, 221);
     position: absolute; /* Position relative to the nearest positioned ancestor */
     bottom: 65px; /* Position from the bottom */
     right: 70px; /* Position from the right */
-    font-size: 70px;
+    font-size: 80px;
     font-family: 'Cyberpunk';
     text-shadow: 0 0 4px #edfbff, /* Inner glow */
               0 0 14px #edfbff, /* Middle glow */
@@ -247,8 +234,8 @@
 .LoginVectorDown{
     position: absolute;
     z-index: 2;
-    bottom: 15px;
     left: 11;
+    margin-top: 480px;
 }
 
 .LoginVectorDown img{
@@ -257,10 +244,10 @@
 }
 
 .Element5 {
+    background-color: red;
+    right: 650px;
     position: absolute;
-    top: 41%; /* This will position the element halfway down its parent container */
-    left: 0;
-    right: 62px;
+    top: 40%;
     z-index: 3; /* This will ensure the element is above other elements with a lower z-index */
     transform: rotate(90deg); /* This will move the element up by half its height, centering it vertically */
 }

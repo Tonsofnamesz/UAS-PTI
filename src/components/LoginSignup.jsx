@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../LoginSignup.css';
-import Element1 from '../pics/Background_Imgs/element1true.png';
+import AnimeGirl from '../pics/Background_Imgs/element1true.png';
 import LoginVecUp from '../pics/Background_Imgs/loginpagevectorup-removebg-preview.png';
 import LoginVecDown from '../pics/Background_Imgs/loginpagevectordown-removebg-preview.png';
-import Element5 from '../pics/Background_Imgs/element5.png';
+import LeftBorderOfGirl from '../pics/Background_Imgs/element5.png';
 import Element2 from '../pics/Background_Imgs/element1footer.png';
 import userIcon from '../pics/Thumbnails/person.png';
 import emailIcon from '../pics/Thumbnails/email.png';
@@ -32,14 +32,11 @@ const LoginSignup = () => {
     <div className="LoginSign">
       <div className="WebTitle">INVENIRE GRIFFON</div>
       <div className="TopSpacing"></div>
-      <div className="Element1">
-        <img src={Element1}></img>
+      <div className="RightSideContainer">
+        <img src={AnimeGirl}></img>
       </div>
       <div className="LoginVectorUp">
         <img src={LoginVecUp}></img>
-      </div>
-      <div className="Element5">
-        <img src={Element5}></img>
       </div>
       <div className="WebTitle2">INVENIRE</div>
       <div className="WebTitle3">GRIFFON</div>
@@ -92,7 +89,7 @@ const LoginSignup = () => {
           <img src={LoginVecDown}></img>
         </div>
       </div>
-      <div style={{ marginTop: '150px' }}></div>
+      <div style={{ marginTop: '300px' }}></div>
       <Footer />
       </div>
   );

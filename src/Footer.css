@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Noto-Reguler';  /* you can choose any name */
-    src: url('../src/fonts/NotoSansDisplay-Regular.ttf');  /* replace with the actual path to your font file */
+    font-family: 'Noto-Reguler';
+    src: url('../src/fonts/NotoSansDisplay-Regular.ttf');
 }
 
 @font-face {
@@ -21,10 +21,9 @@
 
 .Element4 {
     position: absolute;
-    top: -7px;
+    top: -12px;
     left: 0;
     z-index: 2;
-    /*box-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff, 0 0 30px #00c6ff, 0 0 40px #00c6ff;*/
 }
 
 .Element4 img{
@@ -34,5 +33,5 @@
 }
 
 footer div{
-    padding-top: 50px;
+    padding-top: 55px;
 }
