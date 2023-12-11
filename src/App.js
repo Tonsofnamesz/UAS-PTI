@@ -13,6 +13,7 @@ import Cart from './components/Cart';
 import Account from './components/Account';
 import LoginSignup from './components/LoginSignup';
 import ContactForm from './components/ContactUs';
+import Payment from './components/Payment';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/privacy-policies" element={<Privacy />} />
             <Route path="/return-refund-policies" element={<ReturnRefund />} />
             <Route path="/contact-us" element={<ContactForm />} />
+            <Route path="/payment" element={<Payment />} />
           </Routes>
         </Router>
       </div>

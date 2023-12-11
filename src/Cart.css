@@ -1,0 +1,12 @@
+.CheckoutButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
