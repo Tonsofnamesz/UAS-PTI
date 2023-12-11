@@ -26,6 +26,30 @@ const Account = () => {
     e.preventDefault();
   };
 
+  const handlePasswordChange = () => {
+    // Replace 'correctCurrentPassword' with your actual logic
+    const correctCurrentPassword = 'examplePassword';
+
+    // Check if the current password is correct
+    if (userData.currentPassword !== correctCurrentPassword) {
+      // Handle incorrect current password
+      alert("Incorrect current password");
+      return;
+    }
+
+    // Check if the new password and verify new password match
+    if (userData.newPassword !== userData.verifyNewPassword) {
+      // Handle password mismatch
+      alert("New password and verify password do not match");
+      return;
+    }
+
+    // Save the new password or perform other actions as needed
+    // ...
+
+    alert("Password changed successfully!");
+  };
+
   const renderContent = () => {
     switch (selectedButton) {
       case "UserProfileInfo":
@@ -48,16 +72,6 @@ const Account = () => {
                 id="email"
                 name="email"
                 value={userData.email}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="password">Password:</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={userData.password}
                 onChange={handleInputChange}
               />
             </div>
@@ -96,10 +110,39 @@ const Account = () => {
         );
       case "PasswordManagement":
         return (
+          <form onSubmit={handleFormSubmit}>
           <div>
-            {/* Render Password Management content */}
-            <p>Password change form, security settings, etc.</p>
+            <label htmlFor="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={userData.password}
+                onChange={handleInputChange}
+              />
           </div>
+          <div>
+        <label htmlFor="newPassword">New Password:</label>
+        <input
+          type="password"
+          id="newPassword"
+          name="newPassword"
+          value={userData.newPassword}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="verifyNewPassword">Verify New Password:</label>
+        <input
+          type="password"
+          id="verifyNewPassword"
+          name="verifyNewPassword"
+          value={userData.verifyNewPassword}
+          onChange={handleInputChange}
+        />
+      </div>
+      <button onClick={handlePasswordChange}>Save Changes</button>
+          </form>
         );
       case "OrderHistory":
         return (
