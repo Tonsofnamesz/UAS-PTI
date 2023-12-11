@@ -1,0 +1,83 @@
+@keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #363062; /* Warna latar belakang aplikasi */
+  }
+  
+  .App-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    background-color: #427d9d; /* Warna latar belakang header */
+    color: white; /* Warna teks header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Bayangan kotak header */
+  }
+  
+  .item {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: white; /* Warna latar belakang item */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Bayangan kotak item */
+    border-radius: 5px; /* Pembulatan sudut item */
+    overflow: hidden; /* Sembunyikan konten yang meluap */
+  }
+  
+  .list-item {
+    cursor: pointer;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+  }
+  
+  .list-item.open {
+    background-color: #e8e8e8; /* Warna latar belakang item saat dibuka */
+  }
+  
+  .list-item::after {
+    content: ">";
+    transition: transform 0.3s ease;
+  }
+  
+  .list-item.open::after {
+    transform: rotate(90deg); /* Putar tanda panah saat item dibuka */
+  }
+  
+  .description {
+    padding: 10px; /* Menambahkan padding di dalam kotak deskripsi */
+    display: none;
+    transition: all 0.3s ease;
+    border-top: 1px solid #e8e8e8; /* Garis pemisah antara judul dan deskripsi */
+  }
+  
+  .description.show {
+    display: block;
+    animation: slideDown 0.3s ease;
+  }
+  
