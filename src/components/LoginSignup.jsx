@@ -72,11 +72,6 @@ const LoginSignup = () => {
             />
           </div>
         </div>
-        {action !== 'Sign Up' && (
-          <div className="forgot-password">
-            Forget Password?<span> Click Here!</span>
-          </div>
-        )}
         <div className="submit-container">
           <div
             className={action === 'Sign Up' ? 'submit gray' : 'submit'}
@@ -85,6 +80,9 @@ const LoginSignup = () => {
             Login
           </div>
         </div>
+        <div className="button">Button 1</div>
+        <div className="button">Button 2</div>
+        <div className="button">Button 3</div>
         <div className="LoginVectorDown">
           <img src={LoginVecDown}></img>
         </div>
