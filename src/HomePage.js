@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import logo from './pics/Thumbnails/LogoWhole.png';
 import ProductDetail from "./components/ProductDetail";
+import ElementAboveFeatured from './pics/Background_Imgs/element1homepage.png';
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Footer from './Footer';
@@ -63,10 +64,10 @@ const renderProductItems = (items) => {
       <div className="content">
         <div className="background-section">
           <div className="background-left"></div>
-          <div className="background-middle">
-            <img src={logo} alt="Big_Logo" style={{ width: '350px', height: 'auto' }}/>
-          </div>
           <div className="background-right"></div>
+        </div>
+        <div className="ElementAboveFeatured">
+          <img src={ElementAboveFeatured}></img>
         </div>
         <div className="featured">Featured</div>
         <div className="itemCardContainer">
@@ -81,9 +82,6 @@ const renderProductItems = (items) => {
               </Link>
               
             ))}
-            <div>
-            {selectedProduct && <ProductDetail product={selectedProduct} />}
-            </div>
             <div className="showAllButton">
               <button>All</button>
             </div>

@@ -160,16 +160,17 @@
 
 .RightSideContainer {
     position: absolute;
-    margin-left: 1100px;
+    margin-left: 80%;
     top: 0;
     height: 100vh;
     background-color: red;
-  }
+}
 
 .RightSideContainer img {
-    height: 130%;
+    height: 100%;
     width: 100%;
- }
+    object-fit: cover;
+}
 
 .RightSideContainer::after {
     content: '';
