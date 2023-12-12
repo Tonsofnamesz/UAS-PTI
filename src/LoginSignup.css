@@ -151,8 +151,6 @@
     box-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff, 0 0 30px #00c6ff, 0 0 40px #00c6ff; /* Neon glow on hover */
 }
 
-
-
 .gray{
     background: #111;
     color: white;
@@ -160,10 +158,9 @@
 
 .RightSideContainer {
     position: absolute;
-    margin-left: 80%;
+    margin-left: 50%;
     top: 0;
-    height: 100vh;
-    background-color: red;
+    height: 150vh;
 }
 
 .RightSideContainer img {
@@ -172,23 +169,13 @@
     object-fit: cover;
 }
 
-.RightSideContainer::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 20%;
-    height: 100%;  
-    /*background: linear-gradient(to right, rgb(245, 245, 245), transparent);*/
-}
-
 .WebTitle {
     display: flex;
     justify-content: flex-start;
     margin-left: 190px;
     margin-top: 20px;
     font-family: 'Butler-Medium';
-    font-size: 3em; 
+    font-size: 2.87em; 
     font-weight: bold;  
     color: #e0e0e0;  
     text-align: center;
@@ -225,12 +212,12 @@
               0 0 34px #edfbff;
   }
 
-.LoginVectorUp {
+  .LoginVectorUp {
     position: absolute;
     z-index: 2;
-    top: 115px;
-    left: 25px; 
-  }
+    top: 13.5%; /* Adjust according to your layout */
+    left: 2%; /* Adjust according to your layout */
+}
 
 .LoginVectorUp img{
     height: 67%;
@@ -240,13 +227,27 @@
 .LoginVectorDown{
     position: absolute;
     z-index: 2;
-    left: 11;
-    margin-top: 750px;
+    left: 1%; /* Adjust according to your layout */
+    bottom: -20%; /* Use 'bottom' instead of 'margin-top' */
 }
 
 .LoginVectorDown img{
     height: 67%;
     width: 67%;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .LoginVectorUp, .LoginVectorDown {
+        /* Adjust the position for mobile layout */
+        top: 5%;
+        left: 1%;
+    }
+    .LoginVectorUp img, .LoginVectorDown img {
+        /* Adjust the size for mobile layout */
+        height: 50%;
+        width: 50%;
+    }
 }
 
 .Element5 {

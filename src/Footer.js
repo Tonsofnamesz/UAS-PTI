@@ -35,7 +35,6 @@ const Footer = () => (
       <p>2023 Invenire Griffon. All rights reserved.</p>
     </div>
   </div>
-
 );
   
   export default Footer;

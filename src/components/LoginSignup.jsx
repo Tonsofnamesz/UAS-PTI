@@ -87,13 +87,10 @@ const LoginSignup = () => {
           <img src={LoginVecDown}></img>
         </div>
       </div>
-      <div style={{ marginTop: '300px' }}></div>
+      <div style={{ marginTop: '9.76%' }}></div>
       <Footer />
       </div>
   );
 };
 
 export default LoginSignup;
-
-
-
