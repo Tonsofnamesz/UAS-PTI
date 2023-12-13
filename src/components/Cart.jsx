@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'; 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { removeFromCart } from '../store'; 
 import Footer from "../Footer";
 import Navigation from './Navigation';
@@ -9,13 +9,18 @@ import '../Cart.css'
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart); 
+  const totalPrice = useSelector((state) => state.totalPrice);
   const dispatch = useDispatch(); 
+  const navigate = useNavigate();
 
   const handleRemoveFromCart = (product) => { 
     dispatch(removeFromCart(product));
   };
 
-  const totalPrice = cart.reduce((total, product) => total + product.price, 0);
+  const handleCheckout = () => {
+    // Navigate to the Payment component with totalPrice as state
+    navigate('/payment', { state: { totalPrice } });
+  };
 
   return (
     <div>
@@ -38,10 +43,10 @@ const Cart = () => {
           </div>
         ))}
         <div>
-          <h2>Total Price: ${totalPrice}</h2>
+          <h2>Total Price: ${totalPrice.toFixed(2)}</h2>
         </div>
         <div className="CheckoutButton">
-          <Link to="/payment">Checkout</Link>
+          <button onClick={handleCheckout}>Checkout</button>
         </div>
       </div>
       <Footer />
@@ -50,4 +55,3 @@ const Cart = () => {
 }
 
 export default Cart;
-

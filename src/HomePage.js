@@ -1,8 +1,6 @@
 import { useEffect, useState} from "react";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import logo from './pics/Thumbnails/LogoWhole.png';
-import ProductDetail from "./components/ProductDetail";
 import ElementAboveFeatured from './pics/Background_Imgs/vectoraboveitems.png';
 import Navigation from './components/Navigation';
 import Header from './components/Header';
@@ -63,9 +61,8 @@ const renderProductItems = (items) => {
         </div>
       <div className="content">
         <div className="background-section">
-          <div className="background-left"></div>
-          <div className="background-right"></div>
         </div>
+        <hr class="thick-line" />
         <div className="ElementAboveFeatured">
           <img src={ElementAboveFeatured}></img>
         </div>
@@ -83,7 +80,8 @@ const renderProductItems = (items) => {
               
             ))}
         </div>
-        <div className="ElementAboveFeatured">
+        <hr class="thick-line" />
+        <div className="ElementAboveRecommended">
           <img src={ElementAboveFeatured}></img>
         </div>
         <div className="Recommended">Recommended</div>
@@ -99,7 +97,8 @@ const renderProductItems = (items) => {
               </Link>
             ))}
         </div>
-        <div className="ElementAboveFeatured">
+        <hr class="thick-line" />
+        <div className="ElementAboveToday">
           <img src={ElementAboveFeatured}></img>
         </div>
           <div className="AllPreview">Today's Deals</div>

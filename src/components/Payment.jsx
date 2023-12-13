@@ -1,48 +1,48 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux'; 
 import { Link } from 'react-router-dom';
 import Visa from '../pics/Thumbnails/VISA.png';
 import MasterCard from '../pics/Thumbnails/MasterCard.png';
 import '../Payment.css';
+import Header from './Header';
+import Navigation from './Navigation';
+import Footer from '../Footer';
 
 const Payment = () => {
-  // State to manage user inputs
-  const [cardType, setCardType] = useState(''); // 'VISA' or 'MasterCard'
+  const [cardType, setCardType] = useState(''); 
   const [cardNumber, setCardNumber] = useState('');
   const [expiryMonth, setExpiryMonth] = useState('');
   const [expiryYear, setExpiryYear] = useState('');
   const [cvc, setCvc] = useState('');
   const [nominal, setNominal] = useState('');
-  const [paymentAmount, setPaymentAmount] = useState(0); // Fetch this value from your cart or payment page
 
+  const totalPrice = useSelector((state) => state.totalPrice);
   // State to manage payment success
   const [paymentSuccess, setPaymentSuccess] = useState(false);
 
   // Handle payment button click
   const handlePayment = () => {
     // Check if nominal is enough
-    if (parseFloat(nominal) < paymentAmount) {
+    if (parseFloat(nominal) < totalPrice) {
       alert('Nominal is not enough!');
       return;
     }
-
     // Implement payment logic here (e.g., show success message, clear cart, etc.)
     setPaymentSuccess(true);
   };
 
-  // Effect to update payment amount (fetch it from your cart or payment page)
-  useEffect(() => {
-    // Fetch and set payment amount (replace 10000 with the actual value)
-    setPaymentAmount(10000);
-  }, []);
-
   return (
     <div>
+      <Header />
+      <div>
+        <Navigation />
+      </div>
       <div className="PaymentContainer">
         <div className="TopPart">
           <h1>KepplerPay</h1>
         </div>
         <div className="List">
-          <h2>Payment Amount: ${paymentAmount.toFixed(2)}</h2>
+          <h2>Payment Amount: ${totalPrice.toFixed(2)}</h2>
         </div>
         <div className="SelectorPembayaran">
           <h2>Card Type</h2>
@@ -121,6 +121,7 @@ const Payment = () => {
           <Link to="/">Go to Homepage</Link>
         </div>
       )}
+      <Footer />
     </div>
   );
 };

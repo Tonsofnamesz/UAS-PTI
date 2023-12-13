@@ -173,17 +173,28 @@ input[type="text"] {
 }
 
 .background-section {
-  background: linear-gradient(to right, #000, #001f3f);
-  opacity: 1;
   position: relative;
   height: 750px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   font-size: 2rem;
   margin-top: 55px;
 }
+
+.background-section::before {
+  content: "";
+  background: url('../src/pics/Background_Imgs/loginpagebg2.png');
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg);
+}
+
 
 .background-left, .background-right {
   flex: 1;
@@ -217,9 +228,52 @@ input[type="text"] {
   height: auto;
 }
 
+.thick-line {
+  border: none;
+  height: 7px;
+  background: #00c6ff;
+  margin: 0;
+  z-index: 2;
+}
+
+
 .Featured {
   font-family: 'Cyberpunk';
-  background: linear-gradient(to right, #000, #001f3f);
+  background: url('../src/pics/Background_Imgs/loginpagebg2.png');
+  background-size: cover;
+  background-position: center top;
+  opacity: 1;
+  display: flex;
+  color: white;
+  font-size: 4.9rem;
+  text-align: left;
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+}
+
+.Recommended {
+  font-family: 'Cyberpunk';
+  background: url('../src/pics/Background_Imgs/loginpagebg2.png');
+  background-size: cover;
+  background-position: center top;
+  opacity: 1;
+  display: flex;
+  color: white;
+  font-size: 4.9rem;
+  text-align: left;
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+}
+
+.AllPreview {
+  font-family: 'Cyberpunk';
+  background: url('../src/pics/Background_Imgs/loginpagebg2.png');
+  background-size: cover;
+  background-position: center top;
   opacity: 1;
   display: flex;
   color: white;
@@ -241,14 +295,26 @@ input[type="text"] {
   flex-wrap: nowrap;
   overflow-x: auto;
   background: linear-gradient(to right, #000, #001f3f);
-  padding: 10px;
-  margin-top: 30px;
+  padding: 30px;
+  margin: 20px 0;
+  height: 100%;
 }
 
 .itemCard {
   flex: 0 0 auto;
   margin-right: 20px;
-  background: rgba(255, 255, 255, 0.178);
+  background: 
+    repeating-linear-gradient(
+      to bottom,
+      rgb(33, 183, 243),
+      rgb(33, 183, 243) 1px,
+      rgba(173,216,230,0.5) 1px,
+      rgba(173,216,230,0.5) 2px
+    );
+    box-shadow: 0 0 5px #00c6ff, /* Inner glow */
+    0 0 15px #00c6ff, /* Middle glow */
+    0 0 25px #00c6ff, /* Outer glow */
+    0 0 35px #00c6ff;
   padding: 10px; 
   border-radius: 10px; 
   border: white;
@@ -288,34 +354,6 @@ input[type="text"] {
   cursor: pointer;
 }
 
-.Recommended {
-  font-family: 'Cyberpunk';
-  background: linear-gradient(to right, #000, #001f3f);
-  opacity: 1;
-  display: flex;
-  color: white;
-  font-size: 4.9rem;
-  text-align: left;
-  height: 100%;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
-}
-
-.AllPreview {
-  font-family: 'Cyberpunk';
-  background: linear-gradient(to right, #000, #001f3f);
-  opacity: 1;
-  display: flex;
-  color: white;
-  font-size: 4.9rem;
-  text-align: left;
-  height: 100%;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
-}
-
 .ElementAboveFeatured{
     display: flex;
     align-items: flex-start;
@@ -324,7 +362,7 @@ input[type="text"] {
     top: 1;
     z-index: 1;
     width: 65%;
-    top: 126%;
+    top: 124%;
     left: -10%;
 }
 
@@ -332,6 +370,41 @@ input[type="text"] {
   width: 100%;
   height: 95px;
 }
+
+.ElementAboveRecommended{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  top: 1;
+  z-index: 1;
+  width: 65%;
+  top: 188%;
+  left: -10%;
+}
+
+.ElementAboveRecommended img{
+width: 100%;
+height: 95px;
+}
+
+.ElementAboveToday{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  top: 1;
+  z-index: 1;
+  width: 65%;
+  top: 251.9%;
+  left: -10%;
+}
+
+.ElementAboveToday img{
+width: 100%;
+height: 95px;
+}
+
 
 footer {
   border-top-left-radius: 45px;

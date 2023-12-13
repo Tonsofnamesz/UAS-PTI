@@ -2,22 +2,30 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const productsSlice = createSlice({
   name: 'products',
-  initialState: { cart: [] }, // Initialize state as an object with a cart property
+  initialState: { cart: [], totalPrice: 0 },
   reducers: {
     addProduct: (state, action) => {
-      state.cart.push(action.payload); // Add products to the cart array
+      state.cart.push(action.payload);
+      state.totalPrice += action.payload.price; // Add product price to totalPrice
     },
     removeProduct: (state, action) => {
-      state.cart = state.cart.filter(product => product.id !== action.payload.id); // Remove products from the cart array
+      const index = state.cart.findIndex(product => product.id === action.payload.id);
+      if (index !== -1) {
+        state.totalPrice -= state.cart[index].price; // Subtract product price from totalPrice
+        state.cart.splice(index, 1); // Remove product from the cart array
+      }
     },
     updateProduct: (state, action) => {
       const index = state.cart.findIndex(product => product.id === action.payload.id);
       if (index !== -1) {
-        state.cart[index] = action.payload; // Update products in the cart array
+        state.totalPrice -= state.cart[index].price; // Subtract old product price from totalPrice
+        state.cart[index] = action.payload; // Update product in the cart array
+        state.totalPrice += action.payload.price; // Add new product price to totalPrice
       }
     },
     clearCart: (state) => {
-      state.cart = []; // Clear the cart array
+      state.cart = [];
+      state.totalPrice = 0; // Reset totalPrice when cart is cleared
     },
   },
 });

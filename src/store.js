@@ -30,7 +30,8 @@ export const clearCart = () => {
 
 const initialState = {
   products: [],
-  cart: []
+  cart: [],
+  totalPrice: 0, // Add totalPrice to your initial state
 };
 
 const reducer = (state = initialState, action) => {
@@ -43,17 +44,20 @@ const reducer = (state = initialState, action) => {
     case 'ADD_TO_CART':
       return {
         ...state,
-        cart: [...state.cart, action.product]
+        cart: [...state.cart, action.product],
+        totalPrice: state.totalPrice + action.product.price // Add product price to totalPrice
       };
     case 'REMOVE_FROM_CART':
       return {
         ...state,
-        cart: state.cart.filter(product => product.id !== action.product.id)
+        cart: state.cart.filter(product => product.id !== action.product.id),
+        totalPrice: state.totalPrice - action.product.price // Subtract product price from totalPrice
       };
     case 'CLEAR_CART':
       return {
         ...state,
-        cart: []
+        cart: [],
+        totalPrice: 0 // Reset totalPrice when cart is cleared
       };
     default:
       return state;
