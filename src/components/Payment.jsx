@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'; 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { removeFromCart, clearCart } from '../store'; 
 import Visa from '../pics/Thumbnails/VISA.png';
 import MasterCard from '../pics/Thumbnails/MasterCard.png';
 import '../Payment.css';
@@ -15,20 +16,20 @@ const Payment = () => {
   const [expiryYear, setExpiryYear] = useState('');
   const [cvc, setCvc] = useState('');
   const [nominal, setNominal] = useState('');
+  const [message, setMessage] = useState(''); // State to manage payment message
 
+  const cart = useSelector((state) => state.cart); 
   const totalPrice = useSelector((state) => state.totalPrice);
-  // State to manage payment success
-  const [paymentSuccess, setPaymentSuccess] = useState(false);
+  const dispatch = useDispatch(); 
+  const navigate = useNavigate();
 
-  // Handle payment button click
   const handlePayment = () => {
-    // Check if nominal is enough
     if (parseFloat(nominal) < totalPrice) {
-      alert('Nominal is not enough!');
+      setMessage('Nominal is insufficient!');
       return;
     }
-    // Implement payment logic here (e.g., show success message, clear cart, etc.)
-    setPaymentSuccess(true);
+    dispatch(clearCart());
+    setMessage('Payment successful!');
   };
 
   return (
@@ -111,16 +112,8 @@ const Payment = () => {
         <div className="payButton">
           <button onClick={handlePayment}>PAY</button>
         </div>
+        {message && <div className="paymentMessage">{message}</div>}
       </div>
-
-      {/* Display success message and redirect if payment is successful */}
-      {paymentSuccess && (
-        <div className="successMessage">
-          <h2>Payment Successful!</h2>
-          <p>Redirecting to Homepage...</p>
-          <Link to="/">Go to Homepage</Link>
-        </div>
-      )}
       <Footer />
     </div>
   );

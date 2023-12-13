@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const productsSlice = createSlice({
   name: 'products',
-  initialState: { cart: [], totalPrice: 0 },
+  initialState: { cart: [], orderCart: [], totalPrice: 0 }, // Add orderCart to your initial state
   reducers: {
     addProduct: (state, action) => {
       state.cart.push(action.payload);
@@ -24,6 +24,7 @@ const productsSlice = createSlice({
       }
     },
     clearCart: (state) => {
+      state.orderCart = [...state.cart]; // Transfer cart items to orderCart
       state.cart = [];
       state.totalPrice = 0; // Reset totalPrice when cart is cleared
     },
