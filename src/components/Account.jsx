@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { clearCart } from "../productSlice";
 import profilePic from '../pics/Thumbnails/blank-profile-pic.png';
 import '../Account.css';
 import Header from '../Header';
@@ -17,6 +19,9 @@ const Account = () => {
     zipCode: '',
   });
 
+  const dispatch = useDispatch();
+  const orderCart = useSelector(state => state.orderCart);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUserData((prevData) => ({ ...prevData, [name]: value }));
@@ -25,6 +30,18 @@ const Account = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
   };
+
+  const handleClearCart = () => {
+    dispatch(clearCart());
+  };
+
+  function countArrayLength(array) {
+    let count = 0;
+    for (let item of array) {
+      count++;
+    }
+    return count;
+  }
 
   const handlePasswordChange = () => {
     // Replace 'correctCurrentPassword' with your actual logic
@@ -144,11 +161,34 @@ const Account = () => {
       <button onClick={handlePasswordChange}>Save Changes</button>
           </form>
         );
-      case "OrderHistory":
+        case "OrderHistory":
         return (
           <div>
             {/* Render Order History content */}
             <p>Order history details, purchase history, etc.</p>
+            <div>
+              <h2>Order History</h2>
+              {orderCart.length > 0 ? (
+                <ul>
+                  {orderCart.map((order, index) => (
+                    <li key={index}>
+                      <details>
+                        <summary>Order {index + 1}</summary>
+                        <ul>
+                          {order.items.map((item, i) => (
+                            <li key={i}>
+                              {item.name} - {item.quantity}
+                            </li>
+                          ))}
+                        </ul>
+                      </details>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>No orders yet.</p>
+              )}
+            </div>
           </div>
         );
       case "PaymentMethods":

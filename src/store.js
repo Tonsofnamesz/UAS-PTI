@@ -28,10 +28,17 @@ export const clearCart = () => {
   };
 };
 
+export const addOrder = () => {
+  return {
+    type: 'ADD_ORDER',
+  };
+};
+
 const initialState = {
   products: [],
   cart: [],
-  totalPrice: 0, // Add totalPrice to your initial state
+  orderCart: [], // Add orderCart to your initial state
+  totalPrice: 0,
 };
 
 const reducer = (state = initialState, action) => {
@@ -45,19 +52,25 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         cart: [...state.cart, action.product],
-        totalPrice: state.totalPrice + action.product.price // Add product price to totalPrice
+        totalPrice: state.totalPrice + action.product.price
       };
     case 'REMOVE_FROM_CART':
       return {
         ...state,
         cart: state.cart.filter(product => product.id !== action.product.id),
-        totalPrice: state.totalPrice - action.product.price // Subtract product price from totalPrice
+        totalPrice: state.totalPrice - action.product.price
       };
     case 'CLEAR_CART':
       return {
         ...state,
         cart: [],
-        totalPrice: 0 // Reset totalPrice when cart is cleared
+        totalPrice: 0
+      };
+    case 'ADD_ORDER':
+      return {
+        ...state,
+        orderCart: [...state.orderCart, ...state.cart],
+        cart: [],
       };
     default:
       return state;
