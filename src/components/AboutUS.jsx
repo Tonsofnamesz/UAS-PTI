@@ -31,6 +31,30 @@ const AUS  = () => {
                     <p className="aboutUsQuote">PIPEBOMB</p>
                 </div>
             </div>
+            <div className="aboutUsContainer">
+                <img src={""} className="aboutUsImage" />
+                <div className="aboutUsInfo">
+                    <h2 className="aboutUsName">Darryl Pratama</h2>
+                    <p className="aboutUsDescription">Tukang Sabun</p>
+                    <p className="aboutUsQuote">PIPEBOMB</p>
+                </div>
+            </div>
+            <div className="aboutUsContainer">
+                <img src={""} className="aboutUsImage" />
+                <div className="aboutUsInfo">
+                    <h2 className="aboutUsName">Duncan Carellius</h2>
+                    <p className="aboutUsDescription">Tukang Sabun</p>
+                    <p className="aboutUsQuote">PIPEBOMB</p>
+                </div>
+            </div>
+            <div className="aboutUsContainer">
+                <img src={""} className="aboutUsImage" />
+                <div className="aboutUsInfo">
+                    <h2 className="aboutUsName">Aditya Putra Sabrina</h2>
+                    <p className="aboutUsDescription">Tukang Sabun</p>
+                    <p className="aboutUsQuote">PIPEBOMB</p>
+                </div>
+            </div>
             <Footer />
         </div>
     )

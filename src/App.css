@@ -354,23 +354,6 @@ input[type="text"] {
   cursor: pointer;
 }
 
-.ElementAboveFeatured{
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: absolute;
-    top: 1;
-    z-index: 1;
-    width: 65%;
-    top: 124%;
-    left: -10%;
-}
-
-.ElementAboveFeatured img{
-  width: 100%;
-  height: 95px;
-}
-
 .ElementAboveRecommended{
   display: flex;
   align-items: flex-start;

@@ -63,9 +63,6 @@ const renderProductItems = (items) => {
         <div className="background-section">
         </div>
         <hr class="thick-line" />
-        <div className="ElementAboveFeatured">
-          <img src={ElementAboveFeatured}></img>
-        </div>
         <div className="Featured">Featured</div>
         <div className="itemCardContainer">
         {previewFeutItems.map((item) => (
@@ -81,9 +78,6 @@ const renderProductItems = (items) => {
             ))}
         </div>
         <hr class="thick-line" />
-        <div className="ElementAboveRecommended">
-          <img src={ElementAboveFeatured}></img>
-        </div>
         <div className="Recommended">Recommended</div>
           <div className="itemCardContainer">
             {previewReccItems.map((item) => (
@@ -98,9 +92,6 @@ const renderProductItems = (items) => {
             ))}
         </div>
         <hr class="thick-line" />
-        <div className="ElementAboveToday">
-          <img src={ElementAboveFeatured}></img>
-        </div>
           <div className="AllPreview">Today's Deals</div>
           <div className="itemCardContainer">
             {previewAllItems.map((item) => (

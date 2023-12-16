@@ -57,11 +57,11 @@ function ContactForm() {
         </select>
 
         <label htmlFor="message">Message</label>
-        <textarea
+        <input
           id="message"
           name="message"
           onChange={handleChange}
-        ></textarea>
+        ></input>
 
         <label htmlFor="captcha">5 + 6 = ?</label>
         <input
