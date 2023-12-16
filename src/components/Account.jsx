@@ -9,6 +9,8 @@ import Footer from '../Footer';
 
 
 const Account = () => {
+  const [savedName, setSavedName] = useState('');
+  const [savedPassword, setSavedPassword] = useState('');
   const [selectedButton, setSelectedButton] = useState("UserProfileInfo");
   const [userData, setUserData] = useState({
     userName: localStorage.getItem('userName') || '',
@@ -18,6 +20,20 @@ const Account = () => {
     country: '',
     zipCode: '',
   });
+
+  React.useEffect(() => {
+    const savedName = localStorage.getItem('savedName');
+    if (savedName) {
+      setSavedName(savedName);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    const savedPassword = localStorage.getItem('savedPassword');
+    if (savedPassword) {
+      setSavedPassword(savedPassword);
+    }
+  }, []);
 
   const dispatch = useDispatch();
   const orderCart = useSelector(state => state.orderCart);
@@ -191,20 +207,6 @@ const Account = () => {
             </div>
           </div>
         );
-      case "PaymentMethods":
-        return (
-          <div>
-            {/* Render Payment Methods content */}
-            <p>Payment methods information, add/remove cards, etc.</p>
-          </div>
-        );
-      case "PrivacySettings":
-        return (
-          <div>
-            {/* Render Privacy Settings content */}
-            <p>Privacy settings configuration, account visibility, etc.</p>
-          </div>
-        );
       default:
         return null;
     }
@@ -224,15 +226,13 @@ const Account = () => {
             <div className="ProfileContainerTopLeft">
               <img src={profilePic} className="pfp" alt="Profile" />
               <div>
-                <h1>user's name from local storage</h1>
+                <h1>{savedName}</h1>
               </div>
               <div className="NavbarBelowProfileContainerLeft">
                 <div className="profileButtons">
                   <button onClick={() => setSelectedButton("UserProfileInfo")}>User Profile Info</button>
                   <button onClick={() => setSelectedButton("PasswordManagement")}>Password Management</button>
                   <button onClick={() => setSelectedButton("OrderHistory")}>Order History</button>
-                  <button onClick={() => setSelectedButton("PaymentMethods")}>Payment Methods</button>
-                  <button onClick={() => setSelectedButton("PrivacySettings")}>Privacy Settings</button>
                 </div>
               </div>
             </div>
@@ -249,10 +249,4 @@ const Account = () => {
   );
 };
 
-export default Account;
-
-
-
-
-
-  
+export default Account; 

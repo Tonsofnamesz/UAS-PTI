@@ -15,14 +15,17 @@ const LoginSignup = () => {
   const navigate = useNavigate();
   const [action, setAction] = useState('Login');
   const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSignup = () => {
     localStorage.setItem('savedName', name);
+    localStorage.setItem('savedPassword', password);
     navigate('/');
   };
 
   React.useEffect(() => {
     const savedName = localStorage.getItem('savedName');
+    const savedPassword = localStorage.getItem('savedPassword');
     if (savedName) {
       setName(savedName);
     }
@@ -80,9 +83,6 @@ const LoginSignup = () => {
             Login
           </div>
         </div>
-        <div className="button">Button 1</div>
-        <div className="button">Button 2</div>
-        <div className="button">Button 3</div>
         <div className="LoginVectorDown">
           <img src={LoginVecDown}></img>
         </div>
