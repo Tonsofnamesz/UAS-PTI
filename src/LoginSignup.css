@@ -161,9 +161,9 @@
 
 .RightSideContainer {
     position: absolute;
-    margin-left: 50%;
+    margin-left: 60%;
     top: 0;
-    height: 150vh;
+    height: 125vh;
 }
 
 .RightSideContainer img {
@@ -192,7 +192,7 @@
     color: #00c6ff;
     margin-right: 20px;
     position: absolute; /* Position relative to the nearest positioned ancestor */
-    bottom: 140px; /* Position from the bottom */
+    bottom: 20%; /* Position from the bottom */
     right: 10%; /* Position from the right */
     font-size: 80px;
     font-family: 'Cyberpunk';
@@ -207,7 +207,7 @@
     display: flex;
     color: rgba(224, 221, 221);
     position: absolute; /* Position relative to the nearest positioned ancestor */
-    bottom: 65px; /* Position from the bottom */
+    bottom: 10%; /* Position from the bottom */
     right: 10%; /* Position from the right */
     font-size: 80px;
     font-family: 'Cyberpunk';

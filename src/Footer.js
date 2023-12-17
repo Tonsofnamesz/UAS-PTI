@@ -20,7 +20,7 @@ const Footer = () => (
     <div>
       <h2>Support</h2>
       <ul>
-        <li><a href="/payment-terms">Payment Terms</a></li>
+        <li><Link to="/payment-terms">Payment Terms</Link></li>
         <li><Link to="/return-refund-policies">Return & Refund Policies</Link></li>
         <li><a href="/contact-us">Contact Us</a></li>
       </ul>

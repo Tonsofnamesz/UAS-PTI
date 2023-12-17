@@ -15,6 +15,7 @@ import LoginSignup from './components/LoginSignup';
 import ContactForm from './components/ContactUs';
 import Payment from './components/Payment';
 import AllPage from './components/AllPage';
+import PaymentTerms from './components/PaymentTerms';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/account" element={<Account />} />
             <Route path="/all" element={<AllPage />} />
             <Route path="/cart" element={<Cart />} /> 
+            <Route path="/payment-terms" element={<PaymentTerms />} />
             <Route path="/about-us" element={<AUS />} />
             <Route path="/terms-conditions" element={<TermsConds />} />
             <Route path="/privacy-policies" element={<Privacy />} />
