@@ -5,13 +5,13 @@ import ElementAboveFeatured from './pics/Background_Imgs/vectoraboveitems.png';
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Footer from './Footer';
+import { AllPage } from './components/AllPage';
 
 export const HomePage = () => {
-  
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [previewFeutItems, setPreviewFeutItems] = useState([]);
   const [previewReccItems, setPreviewReccItems] = useState([]);
-  const [previewAllItems, setPreviewAllItems] = useState([]);
+  const [previewAllItems, setPreviewAllItems] = useState([]); // Initialize with an empty array
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
@@ -26,28 +26,29 @@ export const HomePage = () => {
       const previewFeutItems = shuffledItems.slice(0, 6);
       const previewReccItems = shuffledItems.slice(6, 12);
       const previewAllItems = shuffledItems.slice(12, 18);
-      
+
       setPreviewFeutItems(previewFeutItems);
       setPreviewReccItems(previewReccItems);
       setPreviewAllItems(previewAllItems);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
- };
+  };
 
- const handleProductClick = (product) => {
-  setSelectedProduct(product);
-};
+  const renderProductItems = (items) => {
+    return items.map((item) => (
+      <Link to={`/product/${item.id}`} key={item.id} className="itemCard">
+        <img src={item.image} alt={item.title} />
+        <p>{item.title}</p>
+        <p>Price: ${item.price}</p>
+      </Link>
+    ));
+  };
 
-const renderProductItems = (items) => {
-  return items.map((item) => (
-    <Link to={`/product/${item.id}`} key={item.id} className="itemCard">
-      <img src={item.image} alt={item.title} />
-      <p>{item.title}</p>
-      <p>Price: ${item.price}</p>
-    </Link>
-  ));
-};
+  // Render all products instantly when the component mounts
+  useEffect(() => {
+    renderProductItems(previewAllItems);
+  }, [previewAllItems]);
 
   return (
     <div>    

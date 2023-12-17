@@ -6,8 +6,9 @@ const Navigation = () => (
     <button>
     <Link to="/">Home</Link>
     </button>
-    <button>All</button>
-    <button>Today's Deals</button>
+    <button>
+      <Link to="/all">All</Link>
+    </button>
   </header>
 );
 
