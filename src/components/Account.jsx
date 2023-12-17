@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { clearCart } from "../productSlice";
 import profilePic from '../pics/Thumbnails/blank-profile-pic.png';
 import '../Account.css';
-import Header from '../Header';
+import Header from './Header';
 import Navigation from './Navigation';
 import Footer from '../Footer';
 

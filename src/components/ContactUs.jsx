@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import "../ContactUs.css";
-import Header from '../Header';
+import Header from './Header';
 import Navigation from './Navigation';
 import Footer from '../Footer';
 

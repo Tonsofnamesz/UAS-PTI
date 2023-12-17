@@ -1,11 +1,6 @@
-.Account {
-  display: flex;
-  flex-direction: column;
-  padding-top: 150px;
-}
-
 .AccountContainer {
   display: flex;
+  padding-top: 150px;
 }
 
 .LeftSideAccountContainer {

@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Noto-Reguler';
+  src: url('../src/fonts/NotoSansDisplay-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Novecento-Light';
+  src: url('../src/fonts/Novecento\ Light.ttf');
+}
+
 .headerContainer, .secondHeaderContainer .smallerSecondHeader{
     position: -webkit-sticky;
     position: sticky;
@@ -5,3 +15,98 @@
     z-index: 1; 
   }
   
+  /* Add these styles to your existing CSS */
+
+.mainheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #0f0f0f; /* Dark background color */
+  color: #00c6ff; /* Neon text color */
+  font-family: 'Novecento-Light';
+}
+
+.leftSideContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.signup,
+.account {
+  padding: 12px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: #fff; /* White text color */
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 10px;
+  background-color: #111; /* Dark button background */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'Novecento-Light';
+}
+
+.signup:hover,
+.account:hover {
+  background-color: #00c6ff; /* Neon color on hover */
+}
+
+.rightSideContainer {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-container input {
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #111; /* Dark input background */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-container button {
+  padding: 10px;
+  background-color: #111; /* Dark button background */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.search-container button:hover {
+  background-color: #00c6ff; /* Neon color on hover */
+}
+
+.cart-container {
+  margin-left: 20px;
+}
+
+.cart-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff; /* White text color */
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.cart-button:hover {
+  color: #00c6ff; /* Neon color on hover */
+}

@@ -18,6 +18,38 @@
   src: url('../src/fonts/Cyberpunk.ttf');  /* replace with the actual path to your font file */
 }
 
+.secondSmallerHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: #0f0f0f; /* Dark background color */
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.secondSmallerHeader button {
+  margin: 0 10px;
+  background-color: #111; /* Dark button background */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'Novecento-Light';
+}
+
+.secondSmallerHeader button a {
+  text-decoration: none;
+  color: #fff; /* White text color */
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.secondSmallerHeader button:hover {
+  background-color: #00c6ff; /* Neon color on hover */
+}
+
 body {
   margin: 0;
 }
@@ -29,60 +61,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-.headerContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-}
-
-.secondHeaderContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  margin-top: 15px;
-}
-
-.mainheader {
-  background: linear-gradient(to right, #000, #001f3f);
-  color: white;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.secondSmallerHeader {
-  display: flex;
-  margin-top: 55px;
-  background: linear-gradient(to right, #0c0b0b, #04315e);
-  color: white;
-  padding: 5px;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
-.leftSideContainer {
-  display: flex;
-}
-
-.rightSideContainer {
-  display: flex;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  width: 30px;
-}
-
-.search-container, .cart-container {
-  display: flex;
 }
 
 Link {
@@ -98,46 +76,6 @@ Link {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.signup, .account {
-  margin-left: 15px;
-  padding: 10px;
-  background-color: #0074cc;
-  color: white;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search-bar input {
-  border: white;
-  opacity: 0.5;
-  font-size: large;
-  border-radius: 10px;
-}
-
-input[type="text"] {
-  padding: 8px;
-  margin-right: 8px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.search-button {
-  padding: 10px;
-  background-color: #0056b3;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
 .search-button img,.cart-button img {
   width: 20px;
   height: 20px;
@@ -145,31 +83,8 @@ input[type="text"] {
   margin-right: 5px;
 }
 
-.cart-button {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  background-color: #0074cc;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-right: 5px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
 .cart-text {
   margin-left: 5px;
-}
-
-.secondSmallerHeader button {
-  display: flex;
-  padding: 10px;
-  background-color: #0074cc;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-right: 5px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .background-section {
@@ -179,7 +94,6 @@ input[type="text"] {
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  margin-top: 55px;
 }
 
 .background-section::before {
