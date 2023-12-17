@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'; 
 import { Link, useNavigate } from 'react-router-dom';
-import { removeFromCart, clearCart } from '../store'; 
+import { addOrder, clearCart } from '../store'; 
 import Visa from '../pics/Thumbnails/VISA.png';
 import MasterCard from '../pics/Thumbnails/MasterCard.png';
 import '../Payment.css';
@@ -24,14 +24,22 @@ const Payment = () => {
   const navigate = useNavigate();
 
   const handlePayment = () => {
+    // Check if balance is inserted
+    if (!nominal) {
+      setMessage('Balance is not inserted!');
+      return;
+    }
+  
     if (parseFloat(nominal) < totalPrice) {
       setMessage('Nominal is insufficient!');
       return;
     }
+  
+    dispatch(addOrder()); // Dispatch the addOrder action
     dispatch(clearCart());
     setMessage('Payment successful!');
   };
-
+  
   return (
     <div>
       <Header />

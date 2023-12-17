@@ -14,15 +14,13 @@
     top: 0;
     z-index: 1; 
   }
-  
-  /* Add these styles to your existing CSS */
 
 .mainheader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #0f0f0f; /* Dark background color */
+  background: linear-gradient(to bottom, #000611, #06132a); /* Dark background color */
   color: #00c6ff; /* Neon text color */
   font-family: 'Novecento-Light';
 }

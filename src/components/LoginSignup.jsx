@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../LoginSignup.css';
-import AnimeGirl from '../pics/Background_Imgs/Suisui.png';
+import AnimeGirl from '../pics/Background_Imgs/cat-war.gif';
 import LoginVecUp from '../pics/Background_Imgs/loginpagevectorup-removebg-preview.png';
 import LoginVecDown from '../pics/Background_Imgs/loginpagevectordown-removebg-preview.png';
-import LeftBorderOfGirl from '../pics/Background_Imgs/element5.png';
-import Element2 from '../pics/Background_Imgs/element1footer.png';
 import userIcon from '../pics/Thumbnails/person.png';
 import emailIcon from '../pics/Thumbnails/email.png';
 import passwordIcon from '../pics/Thumbnails/password.png';
@@ -38,55 +36,45 @@ const LoginSignup = () => {
       <div className="RightSideContainer">
         <img src={AnimeGirl}></img>
       </div>
-      <div className="LoginVectorUp">
-        <img src={LoginVecUp}></img>
-      </div>
       <div className="WebTitle2">INVENIRE</div>
       <div className="WebTitle3">GRIFFON</div>
       <div className="Logincontainer">
-        <div className="header">
-          <div className="text">{action}</div>
-          <div className="underline"></div>
-        </div>
-        <div className="inputs">
-          {action !== 'Login' && (
+          <img className="LoginVectorUp" src={LoginVecUp} />
+          <div className="header">
+            <div className="text">{action}</div>
+            <div className="underline"></div>
+          </div>
+          <div className="inputs">
+            {action !== 'Login' && (
+              <div className="input">
+                <img src={emailIcon} alt="" />
+                <input type="email" placeholder="Email" />
+              </div>
+            )}
             <div className="input">
-              <img src={emailIcon} alt="" />
+              <img src={userIcon} alt="" />
               <input
-                type="email"
-                placeholder="Email"
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
-          )}
-          <div className="input">
-            <img src={userIcon} alt="" />
-            <input
-              type="text"
-              placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
+            <div className="input">
+              <img src={passwordIcon} alt="" />
+              <input type="password" placeholder="Password" />
+            </div>
           </div>
-          <div className="input">
-            <img src={passwordIcon} alt="" />
-            <input
-              type="password"
-              placeholder="Password"
-            />
+          <div className="submit-container">
+            <div
+              className={action === 'Sign Up' ? 'submit gray' : 'submit'}
+              onClick={handleSignup}
+            >
+              Login
+            </div>
           </div>
+          <img className="LoginVectorDown" src={LoginVecDown} />
         </div>
-        <div className="submit-container">
-          <div
-            className={action === 'Sign Up' ? 'submit gray' : 'submit'}
-            onClick={handleSignup}
-          >
-            Login
-          </div>
-        </div>
-        <div className="LoginVectorDown">
-          <img src={LoginVecDown}></img>
-        </div>
-      </div>
       <div style={{ marginTop: '1%' }}></div>
       <Footer />
       </div>

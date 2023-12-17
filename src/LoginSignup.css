@@ -23,22 +23,22 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100%;
+    height: 120%;
     position: absolute;
 }
 
 .Logincontainer{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-left: 10%;
     margin-right: 10%;
-    max-width: 500px;
+    width: 500px;
     margin-top: 50px;
     height: 600px;
     width: 470px;
-    padding-bottom: 120px;
     background: 
     repeating-linear-gradient(
       to bottom,
@@ -51,7 +51,26 @@
               0 0 15px #00c6ff, /* Middle glow */
               0 0 25px #00c6ff, /* Outer glow */
               0 0 35px #00c6ff;
-}
+  }
+  
+  .LoginVectorUp {
+    position: absolute;
+    z-index: 2;
+    top: -5%; /* Adjust according to your layout */
+    left: -5%; /* Adjust according to your layout */
+    height: 25%;
+    width: 110%;
+  }
+  
+  .LoginVectorDown{
+    position: absolute;
+    z-index: 2;
+    left: -5%; /* Adjust according to your layout */
+    bottom: -5%; /* Use 'bottom' instead of 'margin-top' */
+    height: 25%;
+    width: 110%;
+  }
+  
 
 .text{
     color: #edf4ff;
@@ -192,7 +211,7 @@
     color: #00c6ff;
     margin-right: 20px;
     position: absolute; /* Position relative to the nearest positioned ancestor */
-    bottom: 20%; /* Position from the bottom */
+    bottom: 40%; /* Position from the bottom */
     right: 10%; /* Position from the right */
     font-size: 80px;
     font-family: 'Cyberpunk';
@@ -207,7 +226,7 @@
     display: flex;
     color: rgba(224, 221, 221);
     position: absolute; /* Position relative to the nearest positioned ancestor */
-    bottom: 10%; /* Position from the bottom */
+    bottom: 30%; /* Position from the bottom */
     right: 10%; /* Position from the right */
     font-size: 80px;
     font-family: 'Cyberpunk';
@@ -216,44 +235,6 @@
               0 0 24px #edfbff, /* Outer glow */
               0 0 34px #edfbff;
   }
-
-  .LoginVectorUp {
-    position: absolute;
-    z-index: 2;
-    top: 9%; /* Adjust according to your layout */
-    left: 1%; /* Adjust according to your layout */
-}
-
-.LoginVectorUp img{
-    height: 67%;
-    width: 67%;
-}
-
-.LoginVectorDown{
-    position: absolute;
-    z-index: 2;
-    left: 1%; /* Adjust according to your layout */
-    bottom: 9%; /* Use 'bottom' instead of 'margin-top' */
-}
-
-.LoginVectorDown img{
-    height: 67%;
-    width: 67%;
-}
-
-/* Media query for mobile devices */
-@media (max-width: 768px) {
-    .LoginVectorUp, .LoginVectorDown {
-        /* Adjust the position for mobile layout */
-        top: 5%;
-        left: 1%;
-    }
-    .LoginVectorUp img, .LoginVectorDown img {
-        /* Adjust the size for mobile layout */
-        height: 50%;
-        width: 50%;
-    }
-}
 
 .Element5 {
     background-color: red;

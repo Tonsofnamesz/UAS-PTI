@@ -34,6 +34,20 @@ export const addOrder = () => {
   };
 };
 
+export const removeOrder = (index) => {
+  return {
+    type: 'REMOVE_ORDER',
+    index,
+  };
+};
+
+export const clearOrder = () => {
+  return {
+    type: 'CLEAR_ORDER',
+  };
+};
+
+
 const initialState = {
   products: [],
   cart: [],
@@ -66,12 +80,22 @@ const reducer = (state = initialState, action) => {
         cart: [],
         totalPrice: 0
       };
-    case 'ADD_ORDER':
-      return {
-        ...state,
-        orderCart: [...state.orderCart, ...state.cart],
-        cart: [],
+      case 'ADD_ORDER':
+        return {
+          ...state,
+          orderCart: [...state.orderCart, { items: [...state.cart] }],
+          cart: [],
+        };      
+      case 'REMOVE_ORDER':
+        return {
+          ...state,
+          orderCart: state.orderCart.filter((_, i) => i !== action.index),
       };
+      case 'CLEAR_ORDER':
+        return {
+          ...state,
+          orderCart: [],
+        };
     default:
       return state;
   }
