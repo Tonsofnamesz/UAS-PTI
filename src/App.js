@@ -16,6 +16,8 @@ import ContactForm from './components/ContactUs';
 import Payment from './components/Payment';
 import AllPage from './components/AllPage';
 import PaymentTerms from './components/PaymentTerms';
+import SearchResults from './components/SearchResult';
+
 
 function App() {
   return (
@@ -36,6 +38,7 @@ function App() {
             <Route path="/return-refund-policies" element={<ReturnRefund />} />
             <Route path="/contact-us" element={<ContactForm />} />
             <Route path="/payment" element={<Payment />} />
+            <Route path="/search/:query" element={<SearchResults />} />
           </Routes>
         </Router>
       </div>

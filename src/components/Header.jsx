@@ -6,15 +6,15 @@ import '../Header.css';
 
 const Header = () => {
   const [searchInput, setSearchInput] = useState('');
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleSearchInputChange = (event) => {
     setSearchInput(event.target.value);
   };
 
   const handleSearch = () => {
-    // Redirect to the All Product page with the search query
-    history.push(`/all-products?search=${searchInput}`);
+    // Redirect to the SearchResults page with the search query
+    navigate(`/search/${searchInput}`);
   };
 
   const handleKeyPress = (event) => {
