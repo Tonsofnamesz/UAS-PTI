@@ -47,18 +47,6 @@ const Account = () => {
     e.preventDefault();
   };
 
-  const handleClearCart = () => {
-    dispatch(clearCart());
-  };
-
-  function countArrayLength(array) {
-    let count = 0;
-    for (let item of array) {
-      count++;
-    }
-    return count;
-  }
-
   const handlePasswordChange = () => {
     // Replace 'correctCurrentPassword' with your actual logic
     const correctCurrentPassword = 'examplePassword';
@@ -88,57 +76,64 @@ const Account = () => {
       case "UserProfileInfo":
         return (
           <form onSubmit={handleFormSubmit}>
+            <div className="input-group">
             <div>
-              <label htmlFor="userName">User's Name:</label>
+              <label htmlFor="userName" className="input-label">Username:</label>
               <input
                 type="text"
                 id="userName"
                 name="userName"
                 value={userData.userName}
-                onChange={handleInputChange}
+                  onChange={handleInputChange}
+                  className="input-field"
               />
             </div>
             <div>
-              <label htmlFor="email">Email:</label>
+              <label htmlFor="email" className="input-label">Email:</label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 value={userData.email}
-                onChange={handleInputChange}
+                  onChange={handleInputChange}
+                  className="input-field"
               />
             </div>
             <div>
-              <label htmlFor="address">Address:</label>
+              <label htmlFor="address" className="input-label">Address:</label>
               <input
                 type="text"
                 id="address"
                 name="address"
                 value={userData.address}
-                onChange={handleInputChange}
+                  onChange={handleInputChange}
+                  className="input-field"
               />
             </div>
             <div>
-              <label htmlFor="country">Country:</label>
+              <label htmlFor="country" className="input-label">Country:</label>
               <input
                 type="text"
                 id="country"
                 name="country"
                 value={userData.country}
-                onChange={handleInputChange}
+                  onChange={handleInputChange}
+                  className="input-field"
               />
             </div>
             <div>
-              <label htmlFor="zipCode">Zip Code:</label>
+              <label htmlFor="zipCode" className="input-label">Zip Code:</label>
               <input
                 type="text"
                 id="zipCode"
                 name="zipCode"
                 value={userData.zipCode}
-                onChange={handleInputChange}
+                  onChange={handleInputChange}
+                  className="input-field"
               />
+              </div>
+              <button type="submit">Save Changes</button>
             </div>
-            <button type="submit">Save Changes</button>
           </form>
         );
       case "PasswordManagement":
