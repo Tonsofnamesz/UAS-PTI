@@ -1,9 +1,9 @@
-// AllPage.jsx
 import React from 'react';
 import Footer from "../Footer";
 import Navigation from './Navigation';
 import Header from './Header';
 import { Link } from 'react-router-dom';
+import '../AllPage.css';
 
 const AllPage = ({ allProducts }) => {
     return (
@@ -24,7 +24,7 @@ const AllPage = ({ allProducts }) => {
 
 const renderProductItems = (items) => {
     if (!items || !items.length) {
-      return <p>No products available</p>; // Display a message when no products are available
+      return <p>No products available</p>;
     }
   
     return items.map((item) => (
