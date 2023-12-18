@@ -1,21 +1,21 @@
 @font-face {
-  font-family: 'Butler-Medium';  /* you can choose any name */
-  src: url('../src/fonts/Butler_Medium_Stencil.otf');  /* replace with the actual path to your font file */
+  font-family: 'Butler-Medium';
+  src: url('../src/fonts/Butler_Medium_Stencil.otf'); 
 }
 
 @font-face {
-  font-family: 'Noto-Reguler';  /* you can choose any name */
-  src: url('../src/fonts/NotoSansDisplay-Regular.ttf');  /* replace with the actual path to your font file */
+  font-family: 'Noto-Reguler';
+  src: url('../src/fonts/NotoSansDisplay-Regular.ttf');
 }
 
 @font-face {
-  font-family: 'Noto-Light';  /* you can choose any name */
-  src: url('../src/fonts/NotoSansDisplay-Light.ttf');  /* replace with the actual path to your font file */
+  font-family: 'Noto-Light'; 
+  src: url('../src/fonts/NotoSansDisplay-Light.ttf'); 
 }
 
 @font-face {
-  font-family: 'Cyberpunk';  /* you can choose any name */
-  src: url('../src/fonts/Cyberpunk.ttf');  /* replace with the actual path to your font file */
+  font-family: 'Cyberpunk';
+  src: url('../src/fonts/Cyberpunk.ttf'); 
 }
 
 @font-face {
@@ -42,13 +42,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: 1px; /* Adjust this to control the thickness of the neon effect */
+  height: 1px;
   box-shadow: 0 0 5px #00c6ff, 0 0 15px #00c6ff, 0 0 25px #00c6ff, 0 0 35px #00c6ff;
 }
 
 .secondSmallerHeader button {
   margin: 0 10px;
-  background-color: #111; /* Dark button background */
+  background-color: #111;
   border: 2px solid #00c6ff;
   border-radius: 5px;
   cursor: pointer;
@@ -58,13 +58,13 @@
 
 .secondSmallerHeader button a {
   text-decoration: none;
-  color: #fff; /* White text color */
+  color: #fff;
   font-size: 16px;
   font-weight: 600;
 }
 
 .secondSmallerHeader button:hover {
-  background-color: #00c6ff; /* Neon color on hover */
+  background-color: #00c6ff;
 }
 
 body {
@@ -105,13 +105,13 @@ Link {
 .background-section img {
   max-width: 100%;
   height: 90%;
-  margin-bottom: 20px; /* Adjust as needed for spacing between logo and business name */
+  margin-bottom: 20px;
 }
 
 .business-name {
   font-family: 'Cyberpunk';
-  font-size: 44px; /* Adjust the font size as needed */
-  color: #00c6ff; /* CyberPunk blue color */
+  font-size: 44px;
+  color: #00c6ff;
 }
 
 
@@ -247,31 +247,31 @@ Link {
       rgba(173,216,230,0.5) 1px,
       rgba(173,216,230,0.5) 2px
     );
-    outline: 3px solid #00c6ff; /* Neon blue outline */
-    outline-offset: 2px; /* Offset the outline */
-    box-shadow: 0 0 10px #00c6ff, /* Inner glow */
-                 0 0 20px #00c6ff, /* Middle glow */
-                 0 0 30px #00c6ff, /* Outer glow */
-                 0 0 40px #00c6ff; /* Far glow */
+    outline: 3px solid #00c6ff; 
+    outline-offset: 2px;
+    box-shadow: 0 0 10px #00c6ff,
+                 0 0 20px #00c6ff,
+                 0 0 30px #00c6ff,
+                 0 0 40px #00c6ff;
   padding: 10px; 
   border: white;
   border-radius: 10px; 
   width: 250px;
   height: 200px;
-  overflow: hidden; /* Hide the overflow */
-  text-overflow: ellipsis; /* Add ellipsis when the text overflows */
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap; 
 }
 
 @media (min-width: 600px) {
   .itemCard {
-    flex: 0 0 calc(50% - 20px); /* Two items per row on medium screens */
+    flex: 0 0 calc(50% - 20px);
   }
 }
 
 @media (min-width: 900px) {
   .itemCard {
-    flex: 0 0 calc(33.3333% - 20px); /* Three items per row on large screens */
+    flex: 0 0 calc(33.3333% - 20px);
   }
 }
 
@@ -348,10 +348,10 @@ footer {
   margin-top: auto;
   display: flex;
   justify-content: space-around;
-  background: linear-gradient(to bottom, #000611, #06132a); /* subtle gradient from dark grey-blueish to really dark grey */
+  background: linear-gradient(to bottom, #000611, #06132a);
   color: #fff;
   padding: 20px;
-  box-shadow: 0 0 2px #00c6ff, 0 0 12px #00c6ff, 0 0 22px #00c6ff, 0 0 32px #00c6ff; /* neon glowing outline */
+  box-shadow: 0 0 2px #00c6ff, 0 0 12px #00c6ff, 0 0 22px #00c6ff, 0 0 32px #00c6ff;
 }
 
 ul {

@@ -4,25 +4,25 @@
 }
 
 @font-face {
-  font-family: 'Noto-Reguler';  /* you can choose any name */
-  src: url('../src/fonts/NotoSansDisplay-Regular.ttf');  /* replace with the actual path to your font file */
+  font-family: 'Noto-Reguler';  
+  src: url('../src/fonts/NotoSansDisplay-Regular.ttf'); 
 }
 
 @font-face {
-  font-family: 'Noto-Light';  /* you can choose any name */
-  src: url('../src/fonts/NotoSansDisplay-Light.ttf');  /* replace with the actual path to your font file */
+  font-family: 'Noto-Light'; 
+  src: url('../src/fonts/NotoSansDisplay-Light.ttf');  
 }
 
 @font-face {
-  font-family: 'Cyberpunk';  /* you can choose any name */
-  src: url('../src/fonts/Cyberpunk.ttf');  /* replace with the actual path to your font file */
+  font-family: 'Cyberpunk'; 
+  src: url('../src/fonts/Cyberpunk.ttf'); 
 }
 
 .cart {
   display: flex;
   margin-top: 115px;
   text-align: center;
-  color: #00c6ff; /* Neon blue color */ 
+  color: #00c6ff; 
   background: linear-gradient(to bottom, #06132a, #000611); 
   justify-content: center;
   align-items: center;
@@ -33,9 +33,9 @@
 
 .cart h1{
   font-family: 'Cyberpunk';
-  text-shadow: 0 0 4px #00c6ff, /* Inner glow */
-              0 0 14px #00c6ff, /* Middle glow */
-              0 0 24px #00c6ff, /* Outer glow */
+  text-shadow: 0 0 4px #00c6ff,
+              0 0 14px #00c6ff,
+              0 0 24px #00c6ff,
               0 0 34px #00c6ff;
 }
 
@@ -52,9 +52,9 @@
       rgba(173,216,230,0.5) 1px,
       rgba(173,216,230,0.5) 2px
     );
-  box-shadow: 0 0 5px #00c6ff, /* Inner glow */
-    0 0 15px #00c6ff, /* Middle glow */
-    0 0 25px #00c6ff, /* Outer glow */
+  box-shadow: 0 0 5px #00c6ff,
+    0 0 15px #00c6ff,
+    0 0 25px #00c6ff,
     0 0 35px #00c6ff;
   padding: 10px; 
   border-radius: 10px; 
@@ -67,7 +67,7 @@
 .product-image {
   width: 100px;
   height: 100px;
-  border: 2px solid #00c6ff; /* Neon blue border for images */
+  border: 2px solid #00c6ff;
   border-radius: 5px;
 }
 
@@ -84,17 +84,17 @@
 }
 
 .product-detail-link {
-  color: #569fff; /* Light blue color for links */
+  color: #569fff; 
 }
 
 .button-container {
   display: flex;
-  justify-content: center; /* Center the buttons */
+  justify-content: center; 
 }
 
 .add-button,
 .remove-button {
-  margin: 0 10px; /* Add some space between the buttons */
+  margin: 0 10px; 
 }
 
 .remove-button {
@@ -107,13 +107,13 @@
 }
 
 .product-detail-link {
-  margin-top: 20px; /* Adds some space at the bottom */
-  color: #00008B; /* Dark blue color */
+  margin-top: 20px;
+  color: #00008B;
 }
 
 
 .remove-button:hover {
-  background-color: #005678; /* Darker blue on hover */
+  background-color: #005678;
 }
 
 .total-price h2:last-child {
@@ -126,12 +126,12 @@
   padding: 12px;
   margin-right: 20px;
   text-decoration: none;
-  color: #fff; /* White text color */
+  color: #fff; 
   font-size: 16px;
   font-weight: 600;
   margin: 0 10px;
   margin-bottom: 20px;
-  background-color: #111; /* Dark button background */
+  background-color: #111; 
   border: 2px solid #00c6ff;
   border-radius: 5px;
   cursor: pointer;
@@ -147,7 +147,6 @@ button:hover {
   margin-top: 20px;
 }
 
-/* Media query for smaller screens */
 @media (max-width: 768px) {
   .cart {
     padding: 20px;
@@ -173,5 +172,5 @@ button:hover {
 }
 
 .cart {
-  animation: fadeIn 1s ease-in-out; /* Adjust the duration and timing function as needed */
+  animation: fadeIn 1s ease-in-out;
 }

@@ -20,8 +20,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background: linear-gradient(to bottom, #000611, #06132a); /* Dark background color */
-  color: #00c6ff; /* Neon text color */
+  background: linear-gradient(to bottom, #000611, #06132a);
+  color: #00c6ff;
   font-family: 'Novecento-Light';
 }
 
@@ -41,11 +41,11 @@
   padding: 12px;
   margin-right: 20px;
   text-decoration: none;
-  color: #fff; /* White text color */
+  color: #fff;
   font-size: 16px;
   font-weight: 600;
   margin: 0 10px;
-  background-color: #111; /* Dark button background */
+  background-color: #111;
   border: 2px solid #00c6ff;
   border-radius: 5px;
   cursor: pointer;
@@ -55,7 +55,7 @@
 
 .signup:hover,
 .account:hover {
-  background-color: #00c6ff; /* Neon color on hover */
+  background-color: #00c6ff;
 }
 
 .rightSideContainer {
@@ -71,8 +71,8 @@
 .search-container input {
   padding: 10px;
   margin-right: 10px;
-  background-color: #111; /* Dark input background */
-  color: #fff; /* White text color */
+  background-color: #111;
+  color: #fff;
   border: none;
   border-radius: 5px;
   outline: none;
@@ -81,7 +81,7 @@
 
 .search-container button {
   padding: 10px;
-  background-color: #111; /* Dark button background */
+  background-color: #111;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -90,18 +90,18 @@
 }
 
 .search-container button:hover {
-  background-color: #00c6ff; /* Neon color on hover */
+  background-color: #00c6ff;
 }
 
 .cart-button button{
   padding: 12px;
   margin-right: 20px;
   text-decoration: none;
-  color: #fff; /* White text color */
+  color: #fff;
   font-size: 16px;
   font-weight: 600;
   margin: 0 10px;
-  background-color: #111; /* Dark button background */
+  background-color: #111;
   border: 2px solid #00c6ff;
   border-radius: 5px;
   cursor: pointer;
@@ -117,6 +117,6 @@
 }
 
 .cart-container:hover {
-  background-color: #00c6ff; /* Neon color on hover */
+  background-color: #00c6ff;
 }
 

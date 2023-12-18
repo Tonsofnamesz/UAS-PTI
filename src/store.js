@@ -1,6 +1,5 @@
 import { createStore } from 'redux';
 
-// Action creators
 export const addProduct = (product) => {
   return {
     type: 'ADD_PRODUCT',
@@ -65,7 +64,7 @@ export const incrementQuantity = (product) => {
 const initialState = {
   products: [],
   cart: [],
-  orderCart: [], // Add orderCart to your initial state
+  orderCart: [],
   totalPrice: 0,
 };
 
@@ -79,7 +78,6 @@ const reducer = (state = initialState, action) => {
       case 'ADD_TO_CART':
       const itemInCart = state.cart.find((item) => item.id === action.product.id);
       if (itemInCart) {
-        // Create a new cart array with the updated quantity for the added item
         const newCart = state.cart.map((item) =>
           item.id === action.product.id ? { ...item, quantity: item.quantity + 1 } : item
         );
@@ -98,9 +96,7 @@ const reducer = (state = initialState, action) => {
         case 'REMOVE_FROM_CART':
           const itemToRemove = state.cart.find((item) => item.id === action.product.id);
           if (itemToRemove) {
-            // Subtract the total price of all instances of the item
             state.totalPrice -= itemToRemove.price * itemToRemove.quantity;
-            // Remove the item from the cart
             state.cart = state.cart.filter((item) => item.id !== action.product.id);
           }
       return state;
@@ -108,7 +104,6 @@ const reducer = (state = initialState, action) => {
       case 'DECREMENT_QUANTITY':
       const itemToDecrement = state.cart.find((item) => item.id === action.product.id);
       if (itemToDecrement && itemToDecrement.quantity > 1) {
-        // Create a new cart array with the updated quantity for the decremented item
         const newCart = state.cart.map((item) =>
           item.id === action.product.id ? { ...item, quantity: item.quantity - 1 } : item
         );
@@ -118,7 +113,6 @@ const reducer = (state = initialState, action) => {
           totalPrice: state.totalPrice - action.product.price,
         };
       } else {
-        // If the quantity is 1, remove the item from the cart
         return {
           ...state,
           cart: state.cart.filter((item) => item.id !== action.product.id),
@@ -128,7 +122,6 @@ const reducer = (state = initialState, action) => {
       case 'INCREMENT_QUANTITY':
         const itemToIncrement = state.cart.find((item) => item.id === action.product.id);
         if (itemToIncrement) {
-          // Create a new cart array with the updated quantity for the incremented item
           const newCart = state.cart.map((item) =>
             item.id === action.product.id ? { ...item, quantity: item.quantity + 1 } : item
           );
@@ -138,7 +131,6 @@ const reducer = (state = initialState, action) => {
             totalPrice: state.totalPrice + action.product.price,
           };
         } else {
-          // If the item is not in the cart, add it
           return {
             ...state,
             cart: [...state.cart, { ...action.product, quantity: 1 }],

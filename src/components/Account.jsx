@@ -35,7 +35,6 @@ const Account = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    // Save the form data to local storage
     Object.keys(userData).forEach((key) => {
       localStorage.setItem(key, userData[key]);
     });
@@ -92,11 +91,11 @@ const Account = () => {
             <div>
               <label htmlFor="userName" className="input-label">Username:</label>
               <input
-              type="text"
-              id="userName"
-              name="userName"
-              value={userData.userName}
-              onChange={handleInputChange}
+                type="text"
+                id="userName"
+                name="userName"
+                value={userData.userName}
+                onChange={handleInputChange}
             />
             </div>
             <div>
@@ -106,8 +105,8 @@ const Account = () => {
                 id="email"
                 name="email"
                 value={userData.email}
-                  onChange={handleInputChange}
-                  className="input-field"
+                onChange={handleInputChange}
+                className="input-field"
               />
             </div>
             <div>
@@ -117,8 +116,8 @@ const Account = () => {
                 id="address"
                 name="address"
                 value={userData.address}
-                  onChange={handleInputChange}
-                  className="input-field"
+                onChange={handleInputChange}
+                className="input-field"
               />
             </div>
             <div>
@@ -128,8 +127,8 @@ const Account = () => {
                 id="country"
                 name="country"
                 value={userData.country}
-                  onChange={handleInputChange}
-                  className="input-field"
+                onChange={handleInputChange}
+                className="input-field"
               />
             </div>
             <div>
@@ -139,8 +138,8 @@ const Account = () => {
                 id="zipCode"
                 name="zipCode"
                 value={userData.zipCode}
-                  onChange={handleInputChange}
-                  className="input-field"
+                onChange={handleInputChange}
+                className="input-field"
               />
               </div>
               <button type="submit">Save Changes</button>
@@ -161,27 +160,27 @@ const Account = () => {
               />
           </div>
           <div>
-        <label htmlFor="newPassword">New Password:</label>
-        <input
-          type="password"
-          id="newPassword"
-          name="newPassword"
-          value={userData.newPassword}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="verifyNewPassword">Verify New Password:</label>
-        <input
-          type="password"
-          id="verifyNewPassword"
-          name="verifyNewPassword"
-          value={userData.verifyNewPassword}
-          onChange={handleInputChange}
-        />
-      </div>
-      <button onClick={handlePasswordChange}>Save Changes</button>
-          </form>
+            <label htmlFor="newPassword">New Password:</label>
+              <input
+                type="password"
+                id="newPassword"
+                name="newPassword"
+                value={userData.newPassword}
+                onChange={handleInputChange}
+              />
+          </div>
+          <div>
+            <label htmlFor="verifyNewPassword">Verify New Password:</label>
+              <input
+                type="password"
+                id="verifyNewPassword"
+                name="verifyNewPassword"
+                value={userData.verifyNewPassword}
+                onChange={handleInputChange}
+              />
+          </div>
+          <button onClick={handlePasswordChange}>Save Changes</button>
+        </form>
         );
         case "OrderHistory":
         return (
@@ -220,34 +219,32 @@ const Account = () => {
     }
   };
   return (
-    <div>
-      <div className="Account">
-        <div className="headerContainer">
-          <Header />
-        </div>
-        <div className="secondHeaderContainer">
-          <Navigation />
-        </div>
-        <div className="AccountContainer">
-          <div className="LeftSideAccountContainer">
-            <div className="ProfileContainerTopLeft">
-              <img src={profilePic} className="pfp" alt="Profile" />
-              <div>
-                <h1>{savedName}</h1>
-              </div>
-              <div className="NavbarBelowProfileContainerLeft">
-                <div className="profileButtons">
-                  <button onClick={() => setSelectedButton("UserProfileInfo")}>User Profile Info</button>
-                  <button onClick={() => setSelectedButton("PasswordManagement")}>Password Management</button>
-                  <button onClick={() => setSelectedButton("OrderHistory")}>Order History</button>
-                </div>
+    <div className="Account">
+      <div className="headerContainer">
+        <Header />
+      </div>
+      <div className="secondHeaderContainer">
+        <Navigation />
+      </div>
+      <div className="AccountContainer">
+        <div className="LeftSideAccountContainer">
+          <div className="ProfileContainerTopLeft">
+            <img src={profilePic} className="pfp" alt="Profile" />
+            <div>
+              <h1>{savedName}</h1>
+            </div>
+            <div className="NavbarBelowProfileContainerLeft">
+              <div className="profileButtons">
+                <button onClick={() => setSelectedButton("UserProfileInfo")}>User Profile Info</button>
+                <button onClick={() => setSelectedButton("PasswordManagement")}>Password Management</button>
+                <button onClick={() => setSelectedButton("OrderHistory")}>Order History</button>
               </div>
             </div>
           </div>
-          <div className="RightSideAccountContainer">
-            <div className="NavContentsContainerRight">
-              {renderContent()}
-            </div>
+        </div>
+        <div className="RightSideAccountContainer">
+          <div className="NavContentsContainerRight">
+            {renderContent()}
           </div>
         </div>
       </div>

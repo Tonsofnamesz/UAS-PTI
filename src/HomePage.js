@@ -1,14 +1,13 @@
-import { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ElementAboveFeatured from './pics/Background_Imgs/vectoraboveitems.png';
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Footer from './Footer';
-import { AllPage } from './components/AllPage';
 import MainLogo from './pics/Thumbnails/griffin_logo.png';
 
-export const HomePage = () => {
+const HomePage = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [previewFeutItems, setPreviewFeutItems] = useState([]);
   const [previewReccItems, setPreviewReccItems] = useState([]);
@@ -46,74 +45,83 @@ export const HomePage = () => {
     ));
   };
 
-  // Render all products instantly when the component mounts
   useEffect(() => {
     renderProductItems(previewAllItems);
   }, [previewAllItems]);
 
   return (
-    <div>    
-    <div className="Stuffs">
-      </div>
+    <div>
+      <div className="Stuffs"></div>
       <div className="headerContainer">
-          <Header />
-        </div>
+        <Header />
+      </div>
       <div className="secondHeaderContainer">
-          <Navigation />
-        </div>
+        <Navigation />
+      </div>
       <div className="content">
         <div className="background-section">
-          <img src={MainLogo} />
+          <img src={MainLogo} alt="Main Logo" />
           <div className="business-name">
             <h1>INVENIRE</h1>
             <h1>GRIFFON</h1>
           </div>
         </div>
-        <hr class="thick-line" />
+        <hr className="thick-line" />
         <div className="Featured">Featured</div>
         <div className="itemCardContainer">
-        {previewFeutItems.map((item) => (
-              <Link to={{
+          {previewFeutItems.map((item) => (
+            <Link
+              to={{
                 pathname: `/product/${item.id}`,
                 state: { product: item }
-              }} key={item.id} className="itemCard">
-                <img src={item.image} alt={item.title} />
-                <p>{item.title}</p>
-                <p>Price: ${item.price}</p>
-              </Link>
-              
-            ))}
+              }}
+              key={item.id}
+              className="itemCard"
+            >
+              <img src={item.image} alt={item.title} />
+              <p>{item.title}</p>
+              <p>Price: ${item.price}</p>
+            </Link>
+          ))}
         </div>
-        <hr class="thick-line" />
+        <hr className="thick-line" />
         <div className="Recommended">Recommended</div>
-          <div className="itemCardContainer">
-            {previewReccItems.map((item) => (
-              <Link to={{
+        <div className="itemCardContainer">
+          {previewReccItems.map((item) => (
+            <Link
+              to={{
                 pathname: `/product/${item.id}`,
                 state: { product: item }
-              }} key={item.id} className="itemCard">
-                <img src={item.image} alt={item.title} />
-                <p>{item.title}</p>
-                <p>Price: ${item.price}</p>
-              </Link>
-            ))}
+              }}
+              key={item.id}
+              className="itemCard"
+            >
+              <img src={item.image} alt={item.title} />
+              <p>{item.title}</p>
+              <p>Price: ${item.price}</p>
+            </Link>
+          ))}
         </div>
-        <hr class="thick-line" />
-          <div className="AllPreview">Today's Deals</div>
-          <div className="itemCardContainer">
-            {previewAllItems.map((item) => (
-              <Link to={{
+        <hr className="thick-line" />
+        <div className="AllPreview">Today's Deals</div>
+        <div className="itemCardContainer">
+          {previewAllItems.map((item) => (
+            <Link
+              to={{
                 pathname: `/product/${item.id}`,
                 state: { product: item }
-              }} key={item.id} className="itemCard">
-                <img src={item.image} alt={item.title} />
-                <p>{item.title}</p>
-                <p>Price: ${item.price}</p>
-              </Link>
-            ))}
-          </div>
-            <Footer />
+              }}
+              key={item.id}
+              className="itemCard"
+            >
+              <img src={item.image} alt={item.title} />
+              <p>{item.title}</p>
+              <p>Price: ${item.price}</p>
+            </Link>
+          ))}
         </div>
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux'; 
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { addOrder, clearCart } from '../store'; 
+import { addOrder, clearCart } from '../store';
 import Visa from '../pics/Thumbnails/VISA.png';
 import MasterCard from '../pics/Thumbnails/MasterCard.png';
 import '../Payment.css';
@@ -10,42 +10,40 @@ import Navigation from './Navigation';
 import Footer from '../Footer';
 
 const Payment = () => {
-  const [cardType, setCardType] = useState(''); 
+  const [cardType, setCardType] = useState('');
   const [cardNumber, setCardNumber] = useState('');
   const [expiryMonth, setExpiryMonth] = useState('');
   const [expiryYear, setExpiryYear] = useState('');
   const [cvc, setCvc] = useState('');
   const [nominal, setNominal] = useState('');
-  const [message, setMessage] = useState(''); // State to manage payment message
+  const [message, setMessage] = useState('');
 
-  const cart = useSelector((state) => state.cart); 
+  const cart = useSelector((state) => state.cart);
   const totalPrice = useSelector((state) => state.totalPrice);
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handlePayment = () => {
-    // Check if balance is inserted
     if (!nominal) {
       setMessage('Balance is not inserted!');
       return;
     }
-  
-    // Check if the nominal is an integer
+
     if (!Number.isInteger(Number(nominal))) {
-      setMessage("Invalid Nominal");
+      setMessage('Invalid Nominal');
       return;
     }
-  
+
     if (parseFloat(nominal) < totalPrice) {
       setMessage('Nominal is insufficient!');
       return;
     }
-  
-    dispatch(addOrder()); // Dispatch the addOrder action
+
+    dispatch(addOrder());
     dispatch(clearCart());
     setMessage('Payment successful!');
-  };  
-  
+  };
+
   return (
     <div>
       <div className="headerContainer">
@@ -133,5 +131,6 @@ const Payment = () => {
 };
 
 export default Payment;
+
 
 

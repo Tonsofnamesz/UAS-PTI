@@ -1,21 +1,21 @@
 @font-face {
-    font-family: 'Butler-Medium';  /* you can choose any name */
-    src: url('../src/fonts/Butler_Medium_Stencil.otf');  /* replace with the actual path to your font file */
+    font-family: 'Butler-Medium'; 
+    src: url('../src/fonts/Butler_Medium_Stencil.otf'); 
 }
 
 @font-face {
-    font-family: 'Noto-Reguler';  /* you can choose any name */
-    src: url('../src/fonts/NotoSansDisplay-Regular.ttf');  /* replace with the actual path to your font file */
+    font-family: 'Noto-Reguler';  
+    src: url('../src/fonts/NotoSansDisplay-Regular.ttf'); 
 }
 
 @font-face {
-    font-family: 'Noto-Light';  /* you can choose any name */
-    src: url('../src/fonts/NotoSansDisplay-Light.ttf');  /* replace with the actual path to your font file */
+    font-family: 'Noto-Light';
+    src: url('../src/fonts/NotoSansDisplay-Light.ttf');  
 }
 
 @font-face {
-    font-family: 'Cyberpunk';  /* you can choose any name */
-    src: url('../src/fonts/Cyberpunk.ttf');  /* replace with the actual path to your font file */
+    font-family: 'Cyberpunk'; 
+    src: url('../src/fonts/Cyberpunk.ttf');
 }
 
 .LoginSign {
@@ -47,17 +47,17 @@
       rgba(173,216,230,0.5) 2px,
       rgba(173,216,230,0.5) 4px
     );
-    box-shadow: 0 0 5px #00c6ff, /* Inner glow */
-              0 0 15px #00c6ff, /* Middle glow */
-              0 0 25px #00c6ff, /* Outer glow */
+    box-shadow: 0 0 5px #00c6ff,
+              0 0 15px #00c6ff,
+              0 0 25px #00c6ff,
               0 0 35px #00c6ff;
   }
   
   .LoginVectorUp {
     position: absolute;
     z-index: 2;
-    top: -5%; /* Adjust according to your layout */
-    left: -5%; /* Adjust according to your layout */
+    top: -5%;
+    left: -5%;
     height: 25%;
     width: 110%;
   }
@@ -65,8 +65,8 @@
   .LoginVectorDown{
     position: absolute;
     z-index: 2;
-    left: -5%; /* Adjust according to your layout */
-    bottom: -5%; /* Use 'bottom' instead of 'margin-top' */
+    left: -5%;
+    bottom: -5%;
     height: 25%;
     width: 110%;
   }
@@ -155,22 +155,22 @@
     align-items: center;
     padding-left: 120px;
     padding-right: 120px;
-    width: 180px; /* Reduced size */
-    height: 45px; /* Reduced size */
-    color: #fff; /* White text color */
-    background: linear-gradient(to bottom, #000611, #06132a); /* White background */
+    width: 180px;
+    height: 45px;
+    color: #fff;
+    background: linear-gradient(to bottom, #000611, #06132a);
     border-radius: 6px;
-    font-size: 16px; /* Reduced font size */
+    font-size: 16px;
     font-weight: 700;
     font-family: 'Noto-Reguler';
     cursor: pointer;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out; /* Transition for smooth shrinking and color change */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out; 
 }
 
 .submit:hover {
-    transform: scale(0.9); /* Shrink on hover */
-    color: #00c6ff; /* Neon text color on hover */
-    box-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff, 0 0 30px #00c6ff, 0 0 40px #00c6ff; /* Neon glow on hover */
+    transform: scale(0.9);
+    color: #00c6ff;
+    box-shadow: 0 0 10px #00c6ff, 0 0 20px #00c6ff, 0 0 30px #00c6ff, 0 0 40px #00c6ff; 
 }
 
 .gray{
@@ -210,14 +210,14 @@
     justify-content: center;
     color: #00c6ff;
     margin-right: 20px;
-    position: absolute; /* Position relative to the nearest positioned ancestor */
-    bottom: 40%; /* Position from the bottom */
-    right: 10%; /* Position from the right */
+    position: absolute;
+    bottom: 40%;
+    right: 10%; 
     font-size: 80px;
     font-family: 'Cyberpunk';
-    text-shadow: 0 0 4px #00c6ff, /* Inner glow */
-              0 0 14px #00c6ff, /* Middle glow */
-              0 0 24px #00c6ff, /* Outer glow */
+    text-shadow: 0 0 4px #00c6ff,
+              0 0 14px #00c6ff,
+              0 0 24px #00c6ff,
               0 0 34px #00c6ff;
   }
 
@@ -225,29 +225,28 @@
     position: absolute;
     display: flex;
     color: rgba(224, 221, 221);
-    position: absolute; /* Position relative to the nearest positioned ancestor */
-    bottom: 30%; /* Position from the bottom */
-    right: 10%; /* Position from the right */
+    position: absolute;
+    bottom: 30%;
+    right: 10%;
     font-size: 80px;
     font-family: 'Cyberpunk';
-    text-shadow: 0 0 4px #edfbff, /* Inner glow */
-              0 0 14px #edfbff, /* Middle glow */
-              0 0 24px #edfbff, /* Outer glow */
+    text-shadow: 0 0 4px #edfbff,
+              0 0 14px #edfbff,
+              0 0 24px #edfbff,
               0 0 34px #edfbff;
   }
 
 .Element5 {
-    background-color: red;
     right: 650px;
     position: absolute;
     top: 40%;
-    z-index: 3; /* This will ensure the element is above other elements with a lower z-index */
-    transform: rotate(90deg); /* This will move the element up by half its height, centering it vertically */
+    z-index: 3;
+    transform: rotate(90deg);
 }
 
 .Element5 img {
-    width: 30%; /* Adjust this value as needed */
-    height: auto; /* This will scale the height while maintaining the aspect ratio */
+    width: 30%;
+    height: auto;
     filter: sepia(100%) saturate(200%) hue-rotate(160deg);
 }
 

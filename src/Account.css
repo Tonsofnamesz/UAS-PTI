@@ -16,8 +16,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid #00c6ff; /* CyberPunk blue color */
-  background-color: rgba(0, 198, 255, 0.2); /* Light blue background */
+  border: 2px solid #00c6ff;
+  background-color: rgba(0, 198, 255, 0.2);
   border-radius: 8px;
   padding: 100px;
   background: 
@@ -28,9 +28,9 @@
       rgba(173,216,230,0.5) 2px,
       rgba(173,216,230,0.5) 4px
     );
-    box-shadow: 0 0 5px #00c6ff, /* Inner glow */
-              0 0 15px #00c6ff, /* Middle glow */
-              0 0 25px #00c6ff, /* Outer glow */
+  box-shadow: 0 0 5px #00c6ff,
+              0 0 15px #00c6ff,
+              0 0 25px #00c6ff,
               0 0 35px #00c6ff;
 }
 
@@ -43,7 +43,7 @@
 
 .ProfileContainerTopLeft h1 {
   margin: 0;
-  color: white; /* CyberPunk blue color */
+  color: white;
 }
 
 .NavbarBelowProfileContainerLeft {
@@ -62,8 +62,8 @@
 .profileButtons button {
   padding: 10px;
   margin-bottom: 5px;
-  background-color: #1a1a1a; /* Dark background */
-  color: #00c6ff; /* CyberPunk blue color */
+  background-color: #1a1a1a;
+  color: #00c6ff;
   border: none;
   cursor: pointer;
   border-radius: 4px;
@@ -71,7 +71,7 @@
 }
 
 .profileButtons button:hover {
-  background-color: #333; /* Darker background on hover */
+  background-color: #333;
 }
 
 .RightSideAccountContainer {
@@ -79,7 +79,7 @@
   display: flex;
   margin-top: 20px;
   border: 2px solid #00c6ff;
-  background-color: rgba(0, 198, 255, 0.2); /* Light blue background */
+  background-color: rgba(0, 198, 255, 0.2);
   border-radius: 8px;
   padding: 60px;
   font-size: 25px;
@@ -91,9 +91,9 @@
       rgba(173,216,230,0.5) 2px,
       rgba(173,216,230,0.5) 4px
     );
-    box-shadow: 0 0 5px #00c6ff, /* Inner glow */
-              0 0 15px #00c6ff, /* Middle glow */
-              0 0 25px #00c6ff, /* Outer glow */
+  box-shadow: 0 0 5px #00c6ff,
+              0 0 15px #00c6ff,
+              0 0 25px #00c6ff,
               0 0 35px #00c6ff;
 }
 
@@ -119,9 +119,9 @@
   width: 200%;
   padding: 12px;
   box-sizing: border-box;
-  border: 1px solid #333; /* Dark border */
+  border: 1px solid #333;
   border-radius: 4px;
-  background-color: #1a1a1a; /* Dark background */
+  background-color: #1a1a1a;
   color: #00c6ff;
   margin-top: 5px;
   margin-left: 10%;
@@ -129,8 +129,8 @@
 }
 
 .NavContentsContainerRight button {
-  background-color: #1a1a1a; /* Green color */
-  align-self: flex-start; /* Align the button to the start */
+  background-color: #1a1a1a;
+  align-self: flex-start;
   margin-top: 20px;
   color: #00c6ff;
   padding: 10px 15px;
@@ -142,7 +142,7 @@
 }
 
 .NavContentsContainerRight button:hover {
-  background-color: #333; /* Darker green color on hover */
+  background-color: #333;
 }
 
 .input-group {
@@ -165,12 +165,12 @@
 form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align items to the start */
+  align-items: flex-start;
 }
 
 form button[type="submit"] {
-  align-self: flex-start; /* Align the button to the start */
-  margin-top: 20px; /* Optional: Add some space above the button */
+  align-self: flex-start;
+  margin-top: 20px;
 }
 
 @keyframes slideInLeft {
@@ -246,18 +246,6 @@ form button[type="submit"] {
 
 .OrderHistory .itemName {
   font-weight: bold;
-  color: #007bff; /* Change color as needed */
-  font-size: 16px; /* Adjust font size as needed */
+  color: #007bff;
+  font-size: 16px;
 }
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  

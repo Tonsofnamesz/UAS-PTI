@@ -6,14 +6,13 @@
     font-size: 24px;
     margin-bottom: 20px;
     margin-top: 90px;
-    color: #00c6ff; /* Set the color of the word "Results" */
+    color: #00c6ff;
   }
   
   .itemCard {
-    /* Your existing itemCard styles */
     display: inline-block;
     margin: 10px;
-    text-align: center; /* Center the itemCard content */
+    text-align: center; 
     text-decoration: none;
     color: #333;
   }
@@ -21,13 +20,10 @@
   .itemCard img {
     max-width: 100%;
     height: auto;
-    display: block; /* Center the image */
-    margin: 0 auto; /* Center the image horizontally */
+    display: block;
+    margin: 0 auto;
   }
   
   .itemCard p {
-    margin: 10px 0; /* Adjust margin between image and text */
+    margin: 10px 0; 
   }
-  
-  /* Add any additional styles as needed */
-  

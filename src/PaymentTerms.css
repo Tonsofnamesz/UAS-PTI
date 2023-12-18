@@ -5,13 +5,11 @@
     margin-right: auto;
     padding: 20px;
   }
-  
-  /* Style for the heading */
+
 .MainContentContainer  h1, h2 {
     color: #ffffff;
   }
   
-  /* Style for the paragraph */
 .MainContentContainer p {
     color: #ffffff;
     line-height: 1.5;

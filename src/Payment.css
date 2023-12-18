@@ -34,14 +34,14 @@
   border-radius: 5px;
   padding: 5px;
   cursor: pointer;
-  transition: all 0.3s; /* Add transition for smooth effect */
+  transition: all 0.3s;
 }
 
 .VisaMasterCardSelector img.selected {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-  transform: scale(0.9); /* Reduce the size of the selected card image */
-  background-color: #fff; /* Change the background color to white */
+  transform: scale(0.9);
+  background-color: #fff; 
 }
 
 .CardDetails {
@@ -74,11 +74,11 @@
 }
 
 .PaymentContainer button {
-  padding: 15px 30px; /* Increase padding to enlarge the button */
-  margin-top: 20px; /* Add space on the top */
+  padding: 15px 30px;
+  margin-top: 20px;
   background: linear-gradient(to bottom, #06132a, #000611); 
   color: #fff;
-  border: 2px solid #00c6ff; /* Add a border with color #00c6ff */
+  border: 2px solid #00c6ff;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
@@ -101,7 +101,7 @@
 }
 
 .paymentMessage {
-  color: #fff; /* White color */
+  color: #fff; 
   margin-top: 10px;
   font-family: 'Novecento-Medium';
 }
@@ -109,7 +109,7 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px); /* Optional: You can also add a slight vertical translation */
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -118,7 +118,7 @@
 }
 
 .PaymentContainer {
-  animation: fadeIn 1s ease-in-out; /* Adjust the duration and timing function as needed */
+  animation: fadeIn 1s ease-in-out;
 }
 
 

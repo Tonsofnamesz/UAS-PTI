@@ -1,6 +1,3 @@
-.formContainer {
-  background-color: red;
-}
 .contact-form-container {
     display: flex;
     flex-direction: column;

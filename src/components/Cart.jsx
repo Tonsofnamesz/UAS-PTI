@@ -16,17 +16,14 @@ const Cart = () => {
   const handleRemoveFromCart = (product) => {
     const itemInCart = cart.find((item) => item.id === product.id);
     if (itemInCart.quantity > 1) {
-      // If the item quantity is more than 1, decrement the quantity
       dispatch(decrementQuantity(product));
     } else {
-      // If the item quantity is 1, remove the item from the cart
       dispatch(removeFromCart(product));
     }
   };
   
 
   const handleCheckout = () => {
-    // Navigate to the Payment component with totalPrice as state
     navigate('/payment', { state: { totalPrice } });
   };
 

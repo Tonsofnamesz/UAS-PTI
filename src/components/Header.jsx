@@ -13,12 +13,10 @@ const Header = () => {
   };
 
   const handleSearch = () => {
-    // Redirect to the SearchResults page with the search query
     navigate(`/search/${searchInput}`);
   };
 
   const handleKeyPress = (event) => {
-    // Redirect on pressing Enter key
     if (event.key === 'Enter') {
       handleSearch();
     }
@@ -27,7 +25,7 @@ const Header = () => {
   return (
     <header className="mainheader">
       <div className="leftSideContainer">
-        <img src={logosmall} alt="logo" className="logo" />
+        <img src={logosmall} alt="Logo" className="logo" />
         <Link to="/signup" className="signup">
           <div>Sign Up/Register</div>
         </Link>
@@ -59,3 +57,4 @@ const Header = () => {
 };
 
 export default Header;
+
