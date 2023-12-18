@@ -30,6 +30,12 @@ const Payment = () => {
       return;
     }
   
+    // Check if the nominal is an integer
+    if (!Number.isInteger(Number(nominal))) {
+      setMessage("Invalid Nominal");
+      return;
+    }
+  
     if (parseFloat(nominal) < totalPrice) {
       setMessage('Nominal is insufficient!');
       return;
@@ -38,7 +44,7 @@ const Payment = () => {
     dispatch(addOrder()); // Dispatch the addOrder action
     dispatch(clearCart());
     setMessage('Payment successful!');
-  };
+  };  
   
   return (
     <div>

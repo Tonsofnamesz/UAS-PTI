@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Cyberpunk';  /* you can choose any name */
+  src: url('../src/fonts/Cyberpunk.ttf');  /* replace with the actual path to your font file */
+}
+
 .all-products-container {
     display: flex;
     flex-wrap: wrap;
@@ -23,4 +28,15 @@
   
   .itemCard p {
     margin: 8px 0;
+  }
+
+  .products-header{
+    font-family: 'Cyberpunk';
+    color: #FFFFFF; /* White color */
+    text-shadow: 0 0 10px #FFFFFF, /* Inner glow */
+               0 0 20px #FFFFFF, /* Middle glow */
+               0 0 30px #FFFFFF, /* Outer glow */
+               0 0 40px #FFFFFF;
+    margin-top: 5%;
+    font-size: 2em;
   }

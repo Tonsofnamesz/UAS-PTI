@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Novecento-Medium';
+  src: url('../src/fonts/Novecento\ Medium.ttf');
+}
+
 .PaymentContainer {
   max-width: 600px;
   margin: 50px auto;
@@ -5,7 +10,8 @@
   border: 1px solid #00c6ff;
   border-radius: 10px;
   background-color: #1a1a1a;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  box-shadow: 0 0 10px rgba(39, 162, 250, 0.908);
+  font-family: 'Novecento-Medium';
 }
 
 .List {
@@ -68,10 +74,11 @@
 }
 
 .PaymentContainer button {
-  padding: 10px 20px;
-  background-color: #007bff;
+  padding: 15px 30px; /* Increase padding to enlarge the button */
+  margin-top: 20px; /* Add space on the top */
+  background: linear-gradient(to bottom, #06132a, #000611); 
   color: #fff;
-  border: none;
+  border: 2px solid #00c6ff; /* Add a border with color #00c6ff */
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
@@ -92,6 +99,13 @@
   font-weight: bold;
   margin-top: 10px;
 }
+
+.paymentMessage {
+  color: #fff; /* White color */
+  margin-top: 10px;
+  font-family: 'Novecento-Medium';
+}
+
 
 
 

@@ -23,7 +23,7 @@
   margin-top: 115px;
   text-align: center;
   color: #00c6ff; /* Neon blue color */ 
-  background: linear-gradient(to bottom, #06132a, #000611); ;
+  background: linear-gradient(to bottom, #06132a, #000611); 
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -130,6 +130,7 @@
   font-size: 16px;
   font-weight: 600;
   margin: 0 10px;
+  margin-bottom: 20px;
   background-color: #111; /* Dark button background */
   border: 2px solid #00c6ff;
   border-radius: 5px;
