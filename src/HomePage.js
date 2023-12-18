@@ -12,7 +12,7 @@ export const HomePage = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [previewFeutItems, setPreviewFeutItems] = useState([]);
   const [previewReccItems, setPreviewReccItems] = useState([]);
-  const [previewAllItems, setPreviewAllItems] = useState([]); // Initialize with an empty array
+  const [previewAllItems, setPreviewAllItems] = useState([]);
   const [cart, setCart] = useState([]);
 
   useEffect(() => {

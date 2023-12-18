@@ -19,14 +19,13 @@
 }
 
 .cart {
+  display: flex;
   margin-top: 115px;
   text-align: center;
   color: #00c6ff; /* Neon blue color */ 
   background: linear-gradient(to bottom, #06132a, #000611); ;
-  width: 50%;
   justify-content: center;
   align-items: center;
-  display: flex;
   flex-direction: column;
   border-radius: 20px;
   border: solid #00c6ff;
@@ -108,7 +107,6 @@
 }
 
 .product-detail-link {
-  display: inline-block; /* Allows for margins */
   margin-top: 20px; /* Adds some space at the bottom */
   color: #00008B; /* Dark blue color */
 }
@@ -124,18 +122,24 @@
   font-family: 'Novecento-Medium';
 }
 
-.checkout-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 10px;
-  color: white;
-  border: none;
+.checkout-button button {
+  padding: 12px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: #fff; /* White text color */
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 10px;
+  background-color: #111; /* Dark button background */
+  border: 2px solid #00c6ff;
+  border-radius: 5px;
   cursor: pointer;
-  margin-right: 5px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'Novecento-Light';
+}
+
+button:hover {
+  background-color: #00c6ff;
 }
 
 .footer {

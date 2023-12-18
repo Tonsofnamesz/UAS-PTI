@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Header from './Header';
+import Navigation from './Navigation';
+import Footer from '../Footer';
+import '../SearchResult.css';
 
 const SearchResults = () => {
   const { query } = useParams();
@@ -18,6 +22,16 @@ const SearchResults = () => {
   }, [query]);  
 
   return (
+    <div>
+      <div className="headerContainer">
+          <Header />
+        </div>
+      <div className="secondHeaderContainer">
+          <Navigation />
+      </div>
+      <div className="Title">
+        <h1>Results</h1>
+      </div>
     <div className="itemCardContainer">
       {items.map((item) => (
         <Link to={{
@@ -29,6 +43,8 @@ const SearchResults = () => {
           <p>Price: ${item.price}</p>
         </Link>
       ))}
+    </div>
+    <Footer />
     </div>
   );
 };

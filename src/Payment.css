@@ -1,13 +1,11 @@
-/* Cyberpunk-ish PaymentContainer CSS */
-
 .PaymentContainer {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
-  border: 1px solid #00c6ff; /* Neon green border */
+  border: 1px solid #00c6ff;
   border-radius: 10px;
-  background-color: #1a1a1a; /* Dark background color */
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Neon green box shadow */
+  background-color: #1a1a1a;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 .List {
@@ -16,7 +14,7 @@
 
 .SelectorPembayaran {
   margin-bottom: 20px;
-  color: #00c6ff; /* Neon green text color */
+  color: #00c6ff;
 }
 
 .VisaMasterCardSelector {
@@ -26,15 +24,18 @@
 
 .VisaMasterCardSelector img {
   width: 48%;
-  border: 1px solid #00c6ff; /* Neon green border */
+  border: 1px solid #00c6ff;
   border-radius: 5px;
   padding: 5px;
   cursor: pointer;
+  transition: all 0.3s; /* Add transition for smooth effect */
 }
 
 .VisaMasterCardSelector img.selected {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  transform: scale(0.9); /* Reduce the size of the selected card image */
+  background-color: #fff; /* Change the background color to white */
 }
 
 .CardDetails {
@@ -52,9 +53,9 @@
   padding: 8px;
   margin-top: 5px;
   box-sizing: border-box;
-  background-color: #1a1a1a; /* Dark background color */
-  color: #00c6ff; /* Neon green text color */
-  border: 1px solid #00c6ff; /* Neon green border */
+  background-color: #1a1a1a;
+  color: #00c6ff;
+  border: 1px solid #00c6ff;
   border-radius: 5px;
 }
 
@@ -91,6 +92,7 @@
   font-weight: bold;
   margin-top: 10px;
 }
+
 
 
   

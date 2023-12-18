@@ -93,8 +93,7 @@
   background-color: #00c6ff; /* Neon color on hover */
 }
 
-.cart-container {
-  margin-left: 20px;
+.cart-button button{
   padding: 12px;
   margin-right: 20px;
   text-decoration: none;
@@ -107,7 +106,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  font-family: 'Novecento-Light';
+  font-family: 'Novecento-Light';;
 }
 
 .search-button img {

@@ -51,7 +51,7 @@ const Header = () => {
           </div>
         </div>
         <Link to="/cart" className="cart-button">
-          <div className="cart-text">Cart</div>
+          <button>Cart</button>
         </Link>
       </div>
     </header>
