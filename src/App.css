@@ -422,3 +422,66 @@ h2:hover::after {
   transform-origin: bottom left;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.Stuffs,
+.headerContainer,
+.secondHeaderContainer,
+.content,
+.background-section,
+.itemCardContainer,
+thick-line,
+.business-name,
+Featured,
+Recommended,
+AllPreview,
+.itemCard {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.itemCardContainer {
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.background-section img {
+  animation: slideInLeft 1s ease-in-out;
+}
+
+.business-name {
+  animation: slideInRight 1s ease-in-out;
+}
+

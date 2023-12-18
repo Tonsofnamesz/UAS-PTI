@@ -182,7 +182,7 @@
     position: absolute;
     margin-left: 60%;
     top: 0;
-    height: 125vh;
+    height: 115vh;
 }
 
 .RightSideContainer img {
@@ -250,3 +250,33 @@
     height: auto; /* This will scale the height while maintaining the aspect ratio */
     filter: sepia(100%) saturate(200%) hue-rotate(160deg);
 }
+
+@keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .Logincontainer, .WebTitle {
+    animation: slideInLeft 1s ease-in-out;
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .RightSideContainer,
+  .WebTitle2,
+  .WebTitle3 {
+    animation: slideInRight 1s ease-in-out;
+  }
+  
+  

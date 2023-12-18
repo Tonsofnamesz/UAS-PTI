@@ -7,19 +7,49 @@ import Header from './Header';
 import Navigation from './Navigation';
 import Footer from '../Footer';
 
-
 const Account = () => {
   const [savedName, setSavedName] = useState('');
   const [savedPassword, setSavedPassword] = useState('');
   const [selectedButton, setSelectedButton] = useState("UserProfileInfo");
   const [userData, setUserData] = useState({
     userName: localStorage.getItem('userName') || '',
-    email: '',
-    password: '',
-    address: '',
-    country: '',
-    zipCode: '',
+    email: localStorage.getItem('email') || '',
+    password: localStorage.getItem('password') || '',
+    address: localStorage.getItem('address') || '',
+    country: localStorage.getItem('country') || '',
+    zipCode: localStorage.getItem('zipCode') || '',
   });
+
+  React.useEffect(() => {
+    const savedName = localStorage.getItem('userName');
+    if (savedName) {
+      setSavedName(savedName);
+    }
+  }, []);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setUserData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    // Save the form data to local storage
+    Object.keys(userData).forEach((key) => {
+      localStorage.setItem(key, userData[key]);
+    });
+
+    alert('Changes saved successfully!');
+  };
+
+  React.useEffect(() => {
+    const storedUserData = {};
+    Object.keys(userData).forEach((key) => {
+      storedUserData[key] = localStorage.getItem(key) || '';
+    });
+    setUserData(storedUserData);
+  }, []);
 
   React.useEffect(() => {
     const savedName = localStorage.getItem('savedName');
@@ -38,35 +68,17 @@ const Account = () => {
   const dispatch = useDispatch();
   const orderCart = useSelector(state => state.orderCart);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setUserData((prevData) => ({ ...prevData, [name]: value }));
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-  };
-
   const handlePasswordChange = () => {
-    // Replace 'correctCurrentPassword' with your actual logic
     const correctCurrentPassword = 'examplePassword';
 
-    // Check if the current password is correct
     if (userData.currentPassword !== correctCurrentPassword) {
-      // Handle incorrect current password
       alert("Incorrect current password");
       return;
     }
-
-    // Check if the new password and verify new password match
     if (userData.newPassword !== userData.verifyNewPassword) {
-      // Handle password mismatch
       alert("New password and verify password do not match");
       return;
     }
-
-    // Save the new password or perform other actions as needed
-    // ...
 
     alert("Password changed successfully!");
   };
@@ -80,13 +92,12 @@ const Account = () => {
             <div>
               <label htmlFor="userName" className="input-label">Username:</label>
               <input
-                type="text"
-                id="userName"
-                name="userName"
-                value={userData.userName}
-                  onChange={handleInputChange}
-                  className="input-field"
-              />
+              type="text"
+              id="userName"
+              name="userName"
+              value={userData.userName}
+              onChange={handleInputChange}
+            />
             </div>
             <div>
               <label htmlFor="email" className="input-label">Email:</label>
@@ -174,8 +185,7 @@ const Account = () => {
         );
         case "OrderHistory":
         return (
-          <div>
-            {/* Render Order History content */}
+          <div className="OrderHistory">
             <div>
               <h2>Order History</h2>
               {orderCart.length > 0 ? (
@@ -188,7 +198,10 @@ const Account = () => {
                           {order.items.map((item, i) => (
                             <li key={i}>
                               <img src={item.image} alt={item.name} style={{ width: '50px', height: '50px' }} />
-                              {item.name} - ${item.price} x {item.quantity} = ${(item.price * item.quantity).toFixed(2)}
+                              <p className="itemName">{item.name}</p>
+                              <p>
+                                Price: ${item.price} x {item.quantity} = ${(item.price * item.quantity).toFixed(2)}
+                              </p>
                             </li>
                           ))}
                         </ul>

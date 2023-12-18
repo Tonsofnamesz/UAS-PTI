@@ -1,6 +1,10 @@
 import React from "react";
 import '../AboutUs.css';
 import RyanPic from '../pics/Thumbnails/The Unknown.jpg';
+import MatthewPic from '../pics/Thumbnails/Matthew.png';
+import AditPic from '../pics/Thumbnails/Adit.jpg';
+import DuncanPic from '../pics/Thumbnails/Duncan.jpg';
+import DarrylPic from '../pics/Background_Imgs/cat-war.gif';
 import Header from './Header';
 import Navigation from './Navigation';
 import Footer from '../Footer';
@@ -24,7 +28,7 @@ const AUS  = () => {
                 </div>
             </div>
             <div className="aboutUsContainer">
-                <img src={""} className="aboutUsImage" />
+                <img src={MatthewPic} className="aboutUsImage" />
                 <div className="aboutUsInfo">
                     <h2 className="aboutUsName">Matthew Sebastian Kusnandar</h2>
                     <p className="aboutUsDescription">Tukang Sabun</p>
@@ -32,7 +36,7 @@ const AUS  = () => {
                 </div>
             </div>
             <div className="aboutUsContainer">
-                <img src={""} className="aboutUsImage" />
+                <img src={DarrylPic} className="aboutUsImage" />
                 <div className="aboutUsInfo">
                     <h2 className="aboutUsName">Darryl Pratama</h2>
                     <p className="aboutUsDescription">Tukang Sabun</p>
@@ -40,7 +44,7 @@ const AUS  = () => {
                 </div>
             </div>
             <div className="aboutUsContainer">
-                <img src={""} className="aboutUsImage" />
+                <img src={DuncanPic} className="aboutUsImage" />
                 <div className="aboutUsInfo">
                     <h2 className="aboutUsName">Duncan Carellius</h2>
                     <p className="aboutUsDescription">Tukang Sabun</p>
@@ -48,7 +52,7 @@ const AUS  = () => {
                 </div>
             </div>
             <div className="aboutUsContainer">
-                <img src={""} className="aboutUsImage" />
+                <img src={AditPic} className="aboutUsImage" />
                 <div className="aboutUsInfo">
                     <h2 className="aboutUsName">Aditya Putra Sabrina</h2>
                     <p className="aboutUsDescription">Tukang Sabun</p>

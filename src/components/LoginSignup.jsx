@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../LoginSignup.css';
-import AnimeGirl from '../pics/Background_Imgs/cat-war.gif';
+import AnimeGirl from '../pics/Background_Imgs/Suisui.png';
 import LoginVecUp from '../pics/Background_Imgs/loginpagevectorup-removebg-preview.png';
 import LoginVecDown from '../pics/Background_Imgs/loginpagevectordown-removebg-preview.png';
 import userIcon from '../pics/Thumbnails/person.png';
@@ -74,7 +74,7 @@ const LoginSignup = () => {
           </div>
           <img className="LoginVectorDown" src={LoginVecDown} />
         </div>
-      <div style={{ marginTop: '1%' }}></div>
+      <div style={{ marginTop: '5%' }}></div>
       <Footer />
       </div>
   );
