@@ -68,8 +68,7 @@ const LoginSignup = () => {
           <div className="submit-container">
             <div
               className={action === 'Sign Up' ? 'submit gray' : 'submit'}
-              onClick={handleSignup}
-            >
+              onClick={handleSignup}>
               Login
             </div>
           </div>

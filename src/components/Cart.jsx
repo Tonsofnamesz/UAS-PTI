@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'; 
 import { Link, useNavigate } from 'react-router-dom';
-import { removeFromCart, decrementQuantity} from '../store'; 
+import { removeFromCart, decrementQuantity, incrementQuantity} from '../store'; 
 import Footer from "../Footer";
 import Navigation from './Navigation';
 import Header from './Header';
@@ -38,23 +38,26 @@ const Cart = () => {
       <div className="secondHeaderContainer">
         <Navigation />
       </div>
-      <div className="Cart" style={{ marginTop: '115px' }}>
+      <div className="cart">
         <h1>Your Cart</h1>
         {cart.map((product, index) => (
-          <div key={index}>
-            <img src={product.image} alt={product.title} style={{ width: '100px', height: '100px' }} />
-            <h2>{product.title}</h2>
-            <p>ID: {product.id}</p>
-            <p>Price: ${product.price}</p>
-            <p>Quantity: {product.quantity}</p>
-            <Link to={`/product/${product.id}`}>Go to Product Detail</Link>
-            <button onClick={() => handleRemoveFromCart(product)}>Remove</button>
+          <div key={index} className="cart-item">
+          <img src={product.image} alt={product.title} className="product-image" />
+          <h2 className="product-title">{product.title}</h2>
+          <p className="product-id">ID: {product.id}</p>
+          <p className="product-price">Price: ${product.price}</p>
+          <p className="product-quantity">Quantity: {product.quantity}</p>
+          <div className="button-container">
+            <button onClick={() => dispatch(incrementQuantity(product))} className="add-button remove-button">Add</button>
+            <button onClick={() => handleRemoveFromCart(product)} className="remove-button">Remove</button>
           </div>
+          <Link to={`/product/${product.id}`} className="product-detail-link">Go to Product Detail</Link>
+        </div>        
         ))}
-        <div>
-        <h2>Total Price: ${cart.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2)}</h2>
+        <div className="total-price">
+          <h2>Total Price: ${cart.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2)}</h2>
         </div>
-        <div className="CheckoutButton">
+        <div className="checkout-button">
           <button onClick={handleCheckout}>Checkout</button>
         </div>
       </div>

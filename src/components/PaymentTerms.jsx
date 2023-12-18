@@ -1,6 +1,5 @@
 import React from "react";
 import '../AboutUs.css';
-import RyanPic from '../pics/Thumbnails/The Unknown.jpg';
 import Header from './Header';
 import Navigation from './Navigation';
 import Footer from '../Footer';

@@ -28,8 +28,12 @@ const Header = () => {
     <header className="mainheader">
       <div className="leftSideContainer">
         <img src={logosmall} alt="logo" className="logo" />
-        <Link to="/signup" className="signup">Sign Up/Register</Link>
-        <Link to="/account" className="account">Account</Link>
+        <Link to="/signup" className="signup">
+          <div>Sign Up/Register</div>
+        </Link>
+        <Link to="/account" className="account">
+          <div>Account</div>
+        </Link>
       </div>
       <div className="rightSideContainer">
         <div className="search-container">
@@ -46,11 +50,9 @@ const Header = () => {
             </button>
           </div>
         </div>
-        <div className="cart-container">
-          <Link to="/cart" className="cart-button">
-            <span className="cart-text">Cart</span>
-          </Link>
-        </div>
+        <Link to="/cart" className="cart-button">
+          <div className="cart-text">Cart</div>
+        </Link>
       </div>
     </header>
   );

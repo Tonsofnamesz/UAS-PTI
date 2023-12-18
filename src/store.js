@@ -54,6 +54,13 @@ export const decrementQuantity = (product) => {
   };
 };
 
+export const incrementQuantity = (product) => {
+  return {
+    type: 'INCREMENT_QUANTITY',
+    product,
+  };
+};
+
 
 const initialState = {
   products: [],
@@ -118,6 +125,26 @@ const reducer = (state = initialState, action) => {
           totalPrice: state.totalPrice - action.product.price,
         };
       }
+      case 'INCREMENT_QUANTITY':
+        const itemToIncrement = state.cart.find((item) => item.id === action.product.id);
+        if (itemToIncrement) {
+          // Create a new cart array with the updated quantity for the incremented item
+          const newCart = state.cart.map((item) =>
+            item.id === action.product.id ? { ...item, quantity: item.quantity + 1 } : item
+          );
+          return {
+            ...state,
+            cart: newCart,
+            totalPrice: state.totalPrice + action.product.price,
+          };
+        } else {
+          // If the item is not in the cart, add it
+          return {
+            ...state,
+            cart: [...state.cart, { ...action.product, quantity: 1 }],
+            totalPrice: state.totalPrice + action.product.price,
+          };
+        }
       case 'CLEAR_CART':
       return {
         ...state,
