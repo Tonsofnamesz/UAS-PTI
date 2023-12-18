@@ -12,10 +12,10 @@ const SearchResults = () => {
       .then(res => res.json())
       .then(data => {
         // Filter products that match the search query and update state
-        const filteredItems = data.filter(item => item.title.toLowerCase().startsWith(query.toLowerCase()));
+        const filteredItems = data.filter(item => item.title.toLowerCase().includes(query.toLowerCase()));
         setItems(filteredItems);
       });
-  }, [query]);
+  }, [query]);  
 
   return (
     <div className="itemCardContainer">

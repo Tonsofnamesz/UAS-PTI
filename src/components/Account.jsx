@@ -178,40 +178,39 @@ const Account = () => {
           </form>
         );
         case "OrderHistory":
-          return (
+        return (
+          <div>
+            {/* Render Order History content */}
             <div>
-              {/* Render Order History content */}
-              <div>
-                <h2>Order History</h2>
-                {orderCart.length > 0 ? (
-                  <ul>
-                    {orderCart.map((order, index) => (
-                      <li key={index}>
-                        <details>
-                          <summary>Order {index + 1}</summary>
-                          <ul>
-                            {order.items.map((item, i) => (
-                              <li key={i}>
-                                <img src={item.image} alt={item.name} style={{ width: '50px', height: '50px' }} />
-                                {item.name} - ${item.price}
-                              </li>
-                            ))}
-                          </ul>
-                        </details>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p>No orders yet.</p>
-                )}
-              </div>
+              <h2>Order History</h2>
+              {orderCart.length > 0 ? (
+                <ul>
+                  {orderCart.map((order, index) => (
+                    <li key={index}>
+                      <details>
+                        <summary>Order {index + 1}</summary>
+                        <ul>
+                          {order.items.map((item, i) => (
+                            <li key={i}>
+                              <img src={item.image} alt={item.name} style={{ width: '50px', height: '50px' }} />
+                              {item.name} - ${item.price} x {item.quantity} = ${(item.price * item.quantity).toFixed(2)}
+                            </li>
+                          ))}
+                        </ul>
+                      </details>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>No orders yet.</p>
+              )}
             </div>
-          );
+          </div>
+        );
       default:
         return null;
     }
   };
-
   return (
     <div>
       <div className="Account">

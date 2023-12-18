@@ -14,6 +14,7 @@ const ProductDetail = () => {
   const location = useLocation();
   const dispatch = useDispatch(); // Add this line
   const [product, setProduct] = useState(location.state ? location.state.product : null);
+  const [isAdded, setIsAdded] = useState(false);
 
   useEffect(() => {
     if (!product) {
@@ -29,6 +30,7 @@ const ProductDetail = () => {
 
   const handleAddToCart = () => { // Add this function
     dispatch(addToCart(product));
+    setIsAdded(true);
   };
 
   if (!product) {
@@ -57,15 +59,24 @@ const ProductDetail = () => {
       <p style={{ color: 'white', fontSize: '22px'}}>Price: ${product.price}</p>
       <button onClick={handleAddToCart} style={{
       fontSize: '20px',
-      borderRadius: '12px',
-      backgroundColor: 'white',
-      color: 'black',
+      borderRadius: '15px',
+      background: 'linear-gradient(to bottom, #000611, #06132a)',
+      color: 'white',
       padding: '10px 20px',
-      textDecoration: 'none' // Add this line
+      textDecoration: 'none', // No underline
+      border: '2px solid #00c6ff',
+      transition: 'transform 0.3s ease-in-out' // Add this line for smooth transition
     }}
-    onMouseOver={(e) => e.currentTarget.style.textDecoration = 'underline'} // Add this line
-    onMouseOut={(e) => e.currentTarget.style.textDecoration = 'none'} // Add this line
-    >Add to Cart</button>
+    onMouseOver={(e) => {
+      e.currentTarget.style.textDecoration = 'none'; // No underline
+      e.currentTarget.style.transform = 'scale(0.95)'; // Shrink a bit
+    }}
+    onMouseOut={(e) => {
+      e.currentTarget.style.textDecoration = 'none'; // No underline
+      e.currentTarget.style.transform = 'scale(1)'; // Back to original size
+    }}
+        >Add to Cart</button>
+        {isAdded && <p style={{ color: 'white', fontSize: '22px'}}>Item successfully added!</p>}
       </div>
       <Footer />
     </div>

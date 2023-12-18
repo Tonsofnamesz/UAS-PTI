@@ -44,7 +44,7 @@
 .secondSmallerHeader button {
   margin: 0 10px;
   background-color: #111; /* Dark button background */
-  border: none;
+  border: 2px solid #00c6ff;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
@@ -218,17 +218,19 @@ Link {
 
 .itemCardContainer {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   overflow-x: auto;
   background: linear-gradient(to right, #000, #001f3f);
+  justify-content: flex-start;
   padding: 30px;
   margin: 20px 0;
   height: 100%;
 }
 
 .itemCard {
-  flex: 0 0 auto;
+  flex: 0 0 calc(100% - 20px);;
   margin-right: 20px;
+  margin-bottom: 20px;
   background: 
     repeating-linear-gradient(
       to bottom,
@@ -246,6 +248,18 @@ Link {
   border: white;
   width: 250px;
   height: 200px;
+}
+
+@media (min-width: 600px) {
+  .itemCard {
+    flex: 0 0 calc(50% - 20px); /* Two items per row on medium screens */
+  }
+}
+
+@media (min-width: 900px) {
+  .itemCard {
+    flex: 0 0 calc(33.3333% - 20px); /* Three items per row on large screens */
+  }
 }
 
 .itemCard img {

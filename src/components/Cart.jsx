@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'; 
 import { Link, useNavigate } from 'react-router-dom';
-import { removeFromCart } from '../store'; 
+import { removeFromCart, decrementQuantity} from '../store'; 
 import Footer from "../Footer";
 import Navigation from './Navigation';
 import Header from './Header';
@@ -13,9 +13,17 @@ const Cart = () => {
   const dispatch = useDispatch(); 
   const navigate = useNavigate();
 
-  const handleRemoveFromCart = (product) => { 
-    dispatch(removeFromCart(product));
+  const handleRemoveFromCart = (product) => {
+    const itemInCart = cart.find((item) => item.id === product.id);
+    if (itemInCart.quantity > 1) {
+      // If the item quantity is more than 1, decrement the quantity
+      dispatch(decrementQuantity(product));
+    } else {
+      // If the item quantity is 1, remove the item from the cart
+      dispatch(removeFromCart(product));
+    }
   };
+  
 
   const handleCheckout = () => {
     // Navigate to the Payment component with totalPrice as state
@@ -38,12 +46,13 @@ const Cart = () => {
             <h2>{product.title}</h2>
             <p>ID: {product.id}</p>
             <p>Price: ${product.price}</p>
+            <p>Quantity: {product.quantity}</p>
             <Link to={`/product/${product.id}`}>Go to Product Detail</Link>
             <button onClick={() => handleRemoveFromCart(product)}>Remove</button>
           </div>
         ))}
         <div>
-          <h2>Total Price: ${totalPrice.toFixed(2)}</h2>
+        <h2>Total Price: ${cart.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2)}</h2>
         </div>
         <div className="CheckoutButton">
           <button onClick={handleCheckout}>Checkout</button>

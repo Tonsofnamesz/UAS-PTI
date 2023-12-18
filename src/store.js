@@ -47,6 +47,13 @@ export const clearOrder = () => {
   };
 };
 
+export const decrementQuantity = (product) => {
+  return {
+    type: 'DECREMENT_QUANTITY',
+    product,
+  };
+};
+
 
 const initialState = {
   products: [],
@@ -62,19 +69,56 @@ const reducer = (state = initialState, action) => {
         ...state,
         products: [...state.products, action.product]
       };
-    case 'ADD_TO_CART':
-      return {
-        ...state,
-        cart: [...state.cart, action.product],
-        totalPrice: state.totalPrice + action.product.price
-      };
-    case 'REMOVE_FROM_CART':
-      return {
-        ...state,
-        cart: state.cart.filter(product => product.id !== action.product.id),
-        totalPrice: state.totalPrice - action.product.price
-      };
-    case 'CLEAR_CART':
+      case 'ADD_TO_CART':
+      const itemInCart = state.cart.find((item) => item.id === action.product.id);
+      if (itemInCart) {
+        // Create a new cart array with the updated quantity for the added item
+        const newCart = state.cart.map((item) =>
+          item.id === action.product.id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+        return {
+          ...state,
+          cart: newCart,
+          totalPrice: state.totalPrice + action.product.price,
+        };
+      } else {
+        return {
+          ...state,
+          cart: [...state.cart, { ...action.product, quantity: 1 }],
+          totalPrice: state.totalPrice + action.product.price,
+        };
+      }
+        case 'REMOVE_FROM_CART':
+          const itemToRemove = state.cart.find((item) => item.id === action.product.id);
+          if (itemToRemove) {
+            // Subtract the total price of all instances of the item
+            state.totalPrice -= itemToRemove.price * itemToRemove.quantity;
+            // Remove the item from the cart
+            state.cart = state.cart.filter((item) => item.id !== action.product.id);
+          }
+      return state;
+    
+      case 'DECREMENT_QUANTITY':
+      const itemToDecrement = state.cart.find((item) => item.id === action.product.id);
+      if (itemToDecrement && itemToDecrement.quantity > 1) {
+        // Create a new cart array with the updated quantity for the decremented item
+        const newCart = state.cart.map((item) =>
+          item.id === action.product.id ? { ...item, quantity: item.quantity - 1 } : item
+        );
+        return {
+          ...state,
+          cart: newCart,
+          totalPrice: state.totalPrice - action.product.price,
+        };
+      } else {
+        // If the quantity is 1, remove the item from the cart
+        return {
+          ...state,
+          cart: state.cart.filter((item) => item.id !== action.product.id),
+          totalPrice: state.totalPrice - action.product.price,
+        };
+      }
+      case 'CLEAR_CART':
       return {
         ...state,
         cart: [],
