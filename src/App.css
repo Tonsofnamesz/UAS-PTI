@@ -88,17 +88,6 @@ Link {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.search-button img,.cart-button img {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-
-.cart-text {
-  margin-left: 5px;
-}
-
 .background-section {
   position: relative;
   height: 750px;
@@ -108,9 +97,22 @@ Link {
   font-size: 2rem;
 }
 
+.background-section img {
+  max-width: 100%;
+  height: 90%;
+  margin-bottom: 20px; /* Adjust as needed for spacing between logo and business name */
+}
+
+.business-name {
+  font-family: 'Cyberpunk';
+  font-size: 44px; /* Adjust the font size as needed */
+  color: #00c6ff; /* CyberPunk blue color */
+}
+
+
 .background-section::before {
   content: "";
-  background: url('../src/pics/Background_Imgs/loginpagebg2.png');
+  background: url('../src/pics/Background_Imgs/bg.jpeg');
   background-size: cover;
   opacity: 1;
   position: absolute;
@@ -118,7 +120,7 @@ Link {
   left: 0;
   width: 100%;
   height: 100%;
-  transform: rotate(180deg);
+  opacity: 30%;
 }
 
 

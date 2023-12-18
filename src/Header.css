@@ -95,21 +95,29 @@
 
 .cart-container {
   margin-left: 20px;
-  border: 2px solid #00c6ff;
-}
-
-.cart-button {
-  display: flex;
-  align-items: center;
+  padding: 12px;
+  margin-right: 20px;
   text-decoration: none;
   color: #fff; /* White text color */
   font-size: 16px;
   font-weight: 600;
-  transition: color 0.3s ease-in-out;
-  background-color: #111;
+  margin: 0 10px;
+  background-color: #111; /* Dark button background */
+  border: 2px solid #00c6ff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'Novecento-Light';
 }
 
-.cart-button:hover {
-  color: #00c6ff; /* Neon color on hover */
+.search-button img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.cart-container:hover {
+  background-color: #00c6ff; /* Neon color on hover */
 }
 

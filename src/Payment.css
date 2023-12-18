@@ -1,92 +1,96 @@
+/* Cyberpunk-ish PaymentContainer CSS */
+
 .PaymentContainer {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #525050;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .TopPart {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .List {
-    margin-bottom: 20px;
-  }
-  
-  .SelectorPembayaran {
-    margin-bottom: 20px;
-  }
-  
-  .VisaMasterCardSelector {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .VisaMasterCardSelector img {
-    width: 48%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 5px;
-    cursor: pointer;
-  }
-  
-  .VisaMasterCardSelector img.selected {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Added box shadow for visual distinction */
-  }
-  
-  .CardDetails {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  .inputColumn {
-    margin-bottom: 15px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    box-sizing: border-box;
-  }
-  
-  .NominalInput {
-    margin-bottom: 20px;
-  }
-  
-  .payButton {
-    text-align: center;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .successMessage {
-    text-align: center;
-    padding: 20px;
-    background-color: #4caf50;
-    color: #fff;
-    border-radius: 5px;
-    margin-top: 20px;
-  }
-  
-  .successMessage a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 10px;
-    display: inline-block;
-  }
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #00c6ff; /* Neon green border */
+  border-radius: 10px;
+  background-color: #1a1a1a; /* Dark background color */
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Neon green box shadow */
+}
+
+.List {
+  margin-bottom: 20px;
+}
+
+.SelectorPembayaran {
+  margin-bottom: 20px;
+  color: #00c6ff; /* Neon green text color */
+}
+
+.VisaMasterCardSelector {
+  display: flex;
+  justify-content: space-between;
+}
+
+.VisaMasterCardSelector img {
+  width: 48%;
+  border: 1px solid #00c6ff; /* Neon green border */
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.VisaMasterCardSelector img.selected {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.CardDetails {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.inputColumn {
+  margin-bottom: 15px;
+}
+
+.PaymentContainer input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  background-color: #1a1a1a; /* Dark background color */
+  color: #00c6ff; /* Neon green text color */
+  border: 1px solid #00c6ff; /* Neon green border */
+  border-radius: 5px;
+}
+
+.NominalInput {
+  margin-bottom: 20px;
+}
+
+.payButton {
+  text-align: center;
+}
+
+.PaymentContainer button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.successMessage {
+  text-align: center;
+  padding: 20px;
+  background-color: #00c6ff;
+  color: #fff;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.successMessage a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
   

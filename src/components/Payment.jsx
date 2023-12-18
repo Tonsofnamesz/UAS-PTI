@@ -42,14 +42,13 @@ const Payment = () => {
   
   return (
     <div>
-      <Header />
-      <div>
+      <div className="headerContainer">
+        <Header />
+      </div>
+      <div className="secondHeaderContainer">
         <Navigation />
       </div>
       <div className="PaymentContainer">
-        <div className="TopPart">
-          <h1>KepplerPay</h1>
-        </div>
         <div className="List">
           <h2>Payment Amount: ${totalPrice.toFixed(2)}</h2>
         </div>

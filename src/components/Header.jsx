@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import SearchIcon from '../pics/Thumbnails/Search.png';
-import logosmall from '../pics/Thumbnails/LogoSmall.png';
+import logosmall from '../pics/Thumbnails/griffin_logo.png';
 import '../Header.css';
 
 const Header = () => {

@@ -6,6 +6,7 @@ import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Footer from './Footer';
 import { AllPage } from './components/AllPage';
+import MainLogo from './pics/Thumbnails/griffin_logo.png';
 
 export const HomePage = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -62,6 +63,11 @@ export const HomePage = () => {
         </div>
       <div className="content">
         <div className="background-section">
+          <img src={MainLogo} />
+          <div className="business-name">
+            <h1>INVENIRE</h1>
+            <h1>GRIFFON</h1>
+          </div>
         </div>
         <hr class="thick-line" />
         <div className="Featured">Featured</div>
