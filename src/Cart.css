@@ -1,0 +1,176 @@
+@font-face {
+  font-family: 'Novecento-Medium';  /* you can choose any name */
+  src: url('../src/fonts/Novecento\ Medium.ttf');  /* replace with the actual path to your font file */
+}
+
+@font-face {
+  font-family: 'Noto-Reguler';  
+  src: url('../src/fonts/NotoSansDisplay-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: 'Noto-Light'; 
+  src: url('../src/fonts/NotoSansDisplay-Light.ttf');  
+}
+
+@font-face {
+  font-family: 'Cyberpunk'; 
+  src: url('../src/fonts/Cyberpunk.ttf'); 
+}
+
+.cart {
+  display: flex;
+  margin-top: 115px;
+  text-align: center;
+  color: #00c6ff; 
+  background: linear-gradient(to bottom, #06132a, #000611); 
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  border: solid #00c6ff;
+}
+
+.cart h1{
+  font-family: 'Cyberpunk';
+  text-shadow: 0 0 4px #00c6ff,
+              0 0 14px #00c6ff,
+              0 0 24px #00c6ff,
+              0 0 34px #00c6ff;
+}
+
+.cart-item {
+  font-family: 'Novecento-Medium';
+  flex: 0 0 calc(100% - 20px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background: 
+    repeating-linear-gradient(
+      to bottom,
+      rgb(33, 183, 243),
+      rgb(33, 183, 243) 1px,
+      rgba(173,216,230,0.5) 1px,
+      rgba(173,216,230,0.5) 2px
+    );
+  box-shadow: 0 0 5px #00c6ff,
+    0 0 15px #00c6ff,
+    0 0 25px #00c6ff,
+    0 0 35px #00c6ff;
+  padding: 10px; 
+  border-radius: 10px; 
+  border: white;
+  width: 60%;
+  height: 200px;
+}
+
+
+.product-image {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #00c6ff;
+  border-radius: 5px;
+}
+
+.product-title {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.product-id,
+.product-price,
+.product-quantity {
+  margin: 5px 0;
+  color: white;
+}
+
+.product-detail-link {
+  color: #569fff; 
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; 
+}
+
+.add-button,
+.remove-button {
+  margin: 0 10px; 
+}
+
+.remove-button {
+  padding: 10px;
+  background-color: #00c6ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.product-detail-link {
+  margin-top: 20px;
+  color: #00008B;
+}
+
+
+.remove-button:hover {
+  background-color: #005678;
+}
+
+.total-price h2:last-child {
+  font-size: 1.8em;
+  margin-top: 20px;
+  font-family: 'Novecento-Medium';
+}
+
+.checkout-button button {
+  padding: 12px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: #fff; 
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 10px;
+  margin-bottom: 20px;
+  background-color: #111; 
+  border: 2px solid #00c6ff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'Novecento-Light';
+}
+
+button:hover {
+  background-color: #00c6ff;
+}
+
+.footer {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .cart {
+    padding: 20px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.cart {
+  animation: fadeIn 1s ease-in-out;
+}

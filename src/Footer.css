@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Noto-Reguler';
+    src: url('../src/fonts/NotoSansDisplay-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Novecento-Light';
+    src: url('../src/fonts/Novecento\ Light.ttf');
+}
+
+.FooterContainer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding-top: 55px;
+    font-family: 'Novecento-Light';
+}
+
+.Element4 {
+    position: absolute;
+    top: -12px;
+    left: 0;
+    z-index: 2;
+}
+
+.Element4 img{
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    filter: sepia(100%) saturate(200%) hue-rotate(165deg);
+}
+
+
+footer div{
+    padding-top: 55px;
+}

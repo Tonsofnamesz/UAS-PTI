@@ -1,113 +1,251 @@
-.Account {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    background-color: linear-gradient(to right, #000, #001f3f);
+.AccountContainer {
+  display: flex;
+  padding-top: 150px;
+}
+
+.LeftSideAccountContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.ProfileContainerTopLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #00c6ff;
+  background-color: rgba(0, 198, 255, 0.2);
+  border-radius: 8px;
+  padding: 100px;
+  background: 
+    repeating-linear-gradient(
+      to bottom,
+      rgba(135,206,235,0.5),
+      rgba(135,206,235,0.5) 2px,
+      rgba(173,216,230,0.5) 2px,
+      rgba(173,216,230,0.5) 4px
+    );
+  box-shadow: 0 0 5px #00c6ff,
+              0 0 15px #00c6ff,
+              0 0 25px #00c6ff,
+              0 0 35px #00c6ff;
+}
+
+.pfp {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.ProfileContainerTopLeft h1 {
+  margin: 0;
+  color: white;
+}
+
+.NavbarBelowProfileContainerLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.profileButtons {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.profileButtons button {
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #1a1a1a;
+  color: #00c6ff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 25px;
+}
+
+.profileButtons button:hover {
+  background-color: #333;
+}
+
+.RightSideAccountContainer {
+  flex-grow: 0.77;
+  display: flex;
+  margin-top: 20px;
+  border: 2px solid #00c6ff;
+  background-color: rgba(0, 198, 255, 0.2);
+  border-radius: 8px;
+  padding: 60px;
+  font-size: 25px;
+  background: 
+    repeating-linear-gradient(
+      to bottom,
+      rgba(135,206,235,0.5),
+      rgba(135,206,235,0.5) 2px,
+      rgba(173,216,230,0.5) 2px,
+      rgba(173,216,230,0.5) 4px
+    );
+  box-shadow: 0 0 5px #00c6ff,
+              0 0 15px #00c6ff,
+              0 0 25px #00c6ff,
+              0 0 35px #00c6ff;
+}
+
+.NavContentsContainerRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.NavContentsContainerRight form {
+  display: grid;
+  gap: 15px;
+}
+
+.NavContentsContainerRight div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.NavContentsContainerRight input {
+  width: 200%;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #1a1a1a;
+  color: #00c6ff;
+  margin-top: 5px;
+  margin-left: 10%;
+  font-size: 20px;
+}
+
+.NavContentsContainerRight button {
+  background-color: #1a1a1a;
+  align-self: flex-start;
+  margin-top: 20px;
+  color: #00c6ff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 25px;
+}
+
+.NavContentsContainerRight button:hover {
+  background-color: #333;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.input-label {
+  margin-bottom: 10px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+form button[type="submit"] {
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
   }
-  
-  .account-container {
-    border: 1px solid #ccc;
-    padding-bottom: 100px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 20px;
-    width: 600px;
-    margin-top: 200px;
-    background-color: #ffffff28; /* Set your desired background color */
-    transition: height 0.3s ease; /* Smooth transition for height changes */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  to {
+    transform: translateX(0);
   }
-  
-  .user-profile {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    color: white;
+}
+
+.LeftSideAccountContainer {
+  animation: slideInLeft 1s ease-in-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
   }
-  
-  .user-profile img {
-    width: 100px; /* Set your desired profile picture width */
-    height: 100px; /* Set your desired profile picture height */
-    border-radius: 50%;
-    margin-right: 10px;
+  to {
+    transform: translateX(0);
   }
-  
-  .user-name {
-    font-size: 60px;
-  }
-  
-  .buttons-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .account-button {
-    flex: 1;
-    background-color: #007bff; /* Set your desired button background color */
-    color: #fff; /* Set your desired button text color */
-    font-size: 40px;
-    border: none;
-    padding: 10px;
-    margin: 0 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-  }
-  
-  .account-button img {
-    margin-right: 10px;
-    width: 60px; /* Set your desired cart image width */
-    height: 60px; /* Set your desired cart image height */
-  }
-  
-  .wishlist-dropdown,
-  .balance-dropdown {
-    display: none;
-    background-color: #f9f9f9; /* Set your desired dropdown background color */
-    padding: 10px;
-    width: 100%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .account-button:hover + .wishlist-dropdown,
-  .account-button:hover + .balance-dropdown,
-  .balance-dropdown:hover {
-    display: block;
-  }
-  
-  .wishlist-dropdown ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .wishlist-dropdown li {
-    padding: 5px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .wishlist-dropdown li:last-child {
-    border-bottom: none;
-  }
-  
-  .balance-dropdown p {
-    margin-bottom: 10px;
-  }
-  
-  .balance-dropdown input {
-    border: 1px solid #ccc;
-    padding: 5px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  
-  
-  
-  
-  
-  
+}
+
+.RightSideAccountContainer {
+  animation: slideInRight 1s ease-in-out;
+}
+
+.OrderHistory {
+  margin: 20px;
+  color: #00c6ff;
+}
+
+.OrderHistory h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.OrderHistory ul {
+  list-style: none;
+  padding: 0;
+}
+
+.OrderHistory li {
+  margin-bottom: 20px;
+}
+
+.OrderHistory details {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+}
+
+.OrderHistory summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.OrderHistory ul {
+  padding-left: 20px;
+}
+
+.OrderHistory img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.OrderHistory p {
+  margin: 0;
+}
+
+.OrderHistory .itemName {
+  font-weight: bold;
+  color: #007bff;
+  font-size: 16px;
+}

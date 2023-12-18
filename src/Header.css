@@ -1,0 +1,122 @@
+@font-face {
+  font-family: 'Noto-Reguler';
+  src: url('../src/fonts/NotoSansDisplay-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Novecento-Light';
+  src: url('../src/fonts/Novecento\ Light.ttf');
+}
+
+.headerContainer, .secondHeaderContainer .smallerSecondHeader{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1; 
+  }
+
+.mainheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #000611, #06132a);
+  color: #00c6ff;
+  font-family: 'Novecento-Light';
+}
+
+.leftSideContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.signup,
+.account {
+  padding: 12px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 10px;
+  background-color: #111;
+  border: 2px solid #00c6ff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'Novecento-Light';
+}
+
+.signup:hover,
+.account:hover {
+  background-color: #00c6ff;
+}
+
+.rightSideContainer {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-container input {
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid #00c6ff;
+}
+
+.search-container button {
+  padding: 10px;
+  background-color: #111;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid #00c6ff;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.search-container button:hover {
+  background-color: #00c6ff;
+}
+
+.cart-button button{
+  padding: 12px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 10px;
+  background-color: #111;
+  border: 2px solid #00c6ff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'Novecento-Light';;
+}
+
+.search-button img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.cart-container:hover {
+  background-color: #00c6ff;
+}
+

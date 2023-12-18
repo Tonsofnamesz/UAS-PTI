@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'Novecento-Medium';
+  src: url('../src/fonts/Novecento\ Medium.ttf');
+}
+
+.PaymentContainer {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #00c6ff;
+  border-radius: 10px;
+  background-color: #1a1a1a;
+  box-shadow: 0 0 10px rgba(39, 162, 250, 0.908);
+  font-family: 'Novecento-Medium';
+}
+
+.List {
+  margin-bottom: 20px;
+}
+
+.SelectorPembayaran {
+  margin-bottom: 20px;
+  color: #00c6ff;
+}
+
+.VisaMasterCardSelector {
+  display: flex;
+  justify-content: space-between;
+}
+
+.VisaMasterCardSelector img {
+  width: 48%;
+  border: 1px solid #00c6ff;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.VisaMasterCardSelector img.selected {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  transform: scale(0.9);
+  background-color: #fff; 
+}
+
+.CardDetails {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.inputColumn {
+  margin-bottom: 15px;
+}
+
+.PaymentContainer input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  background-color: #1a1a1a;
+  color: #00c6ff;
+  border: 1px solid #00c6ff;
+  border-radius: 5px;
+}
+
+.NominalInput {
+  margin-bottom: 20px;
+}
+
+.payButton {
+  text-align: center;
+}
+
+.PaymentContainer button {
+  padding: 15px 30px;
+  margin-top: 20px;
+  background: linear-gradient(to bottom, #06132a, #000611); 
+  color: #fff;
+  border: 2px solid #00c6ff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.successMessage {
+  text-align: center;
+  padding: 20px;
+  background-color: #00c6ff;
+  color: #fff;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.successMessage a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.paymentMessage {
+  color: #fff; 
+  margin-top: 10px;
+  font-family: 'Novecento-Medium';
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.PaymentContainer {
+  animation: fadeIn 1s ease-in-out;
+}
+
+
+
+
+  

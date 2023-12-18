@@ -1,0 +1,29 @@
+.itemCardContainer {
+    text-align: center;
+  }
+  
+  .Title h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    margin-top: 90px;
+    color: #00c6ff;
+  }
+  
+  .itemCard {
+    display: inline-block;
+    margin: 10px;
+    text-align: center; 
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .itemCard img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .itemCard p {
+    margin: 10px 0; 
+  }

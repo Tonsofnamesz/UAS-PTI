@@ -1,0 +1,16 @@
+.MainContentContainer {
+    max-width: 800px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+  }
+
+.MainContentContainer  h1, h2 {
+    color: #ffffff;
+  }
+  
+.MainContentContainer p {
+    color: #ffffff;
+    line-height: 1.5;
+  }

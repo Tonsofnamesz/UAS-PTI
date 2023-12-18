@@ -1,19 +1,19 @@
 import React from 'react';
 import '../TermsConds.css';
-import Header from '../Header';
+import Header from './Header';
 import Navigation from './Navigation';
 import Footer from '../Footer';
 
 const Privacy = () => {
     return (
         <div>
-        <div className="TermsStuff">
-        <div className="headerContainer">
+            <div className="headerContainer">
           <Header />
         </div>
       <div className="secondHeaderContainer">
           <Navigation />
         </div>
+        <div className="TermsStuff">
             <h1>Privacy Policies</h1>
             <h2>SECTION 1 – WHAT DO WE DO WITH YOUR INFORMATION?</h2>
             <p>
