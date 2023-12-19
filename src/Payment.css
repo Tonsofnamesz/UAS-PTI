@@ -74,14 +74,21 @@
 }
 
 .PaymentContainer button {
-  padding: 15px 30px;
-  margin-top: 20px;
-  background: linear-gradient(to bottom, #06132a, #000611); 
-  color: #fff;
+  padding: 10px;
+  margin-bottom: 5px;
+  background: linear-gradient(to bottom, #000611, #06132a);
+  color: white;
   border: 2px solid #00c6ff;
-  border-radius: 5px;
   cursor: pointer;
-  font-weight: bold;
+  border-radius: 15px;
+  font-size: 25px;
+  box-shadow: 0px 0px 10px #00c6ff;
+  transition: transform 0.3s ease-in-out;
+  width: 200px;
+}
+
+.PaymentContainer button:hover {
+  transform: scale(0.95); 
 }
 
 .successMessage {

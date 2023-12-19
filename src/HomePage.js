@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import ElementAboveFeatured from './pics/Background_Imgs/vectoraboveitems.png';
 import Navigation from './components/Navigation';
 import Header from './components/Header';
 import Footer from './Footer';

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../store';
@@ -14,19 +15,37 @@ const ProductDetail = () => {
   const dispatch = useDispatch();
   const [product, setProduct] = useState(location.state ? location.state.product : null);
   const [isAdded, setIsAdded] = useState(false);
+  const [previewAllItems, setPreviewAllItems] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("https://fakestoreapi.com/products");
+      const data = response.data;
+      const shuffledItems = data.sort(() => 0.5 - Math.random());
+      const previewAllItems = shuffledItems.slice(12, 18);
+
+      setPreviewAllItems(previewAllItems);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
   useEffect(() => {
-    if (!product) {
-      axios.get(`https://fakestoreapi.com/products/${id}`)
-        .then((response) => {
-          setProduct(response.data);
-        })
-        .catch((error) => {
-          console.error('Error fetching data:', error);
-        });
-    }
-  }, [id, product]);
+    setIsAdded(false);
+    axios.get(`https://fakestoreapi.com/products/${id}`)
+      .then((response) => {
+        setProduct(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, [id]); 
+  
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+  
   const handleAddToCart = () => {
     dispatch(addToCart(product));
     setIsAdded(true);
@@ -35,6 +54,21 @@ const ProductDetail = () => {
   if (!product) {
     return <div>Loading...</div>;
   }
+
+  const renderProductItems = (items) => {
+    return items.map((item) => (
+      <Link 
+        to={`/product/${item.id}`} 
+        key={item.id} 
+        className="itemCard"
+        onClick={() => window.scrollTo(0, 0)}  // Add this line
+      >
+        <img src={item.image} alt={item.title} />
+        <p>{item.title}</p>
+        <p>Price: ${item.price}</p>
+      </Link>
+    ));
+  };   
 
   return (
     <div>
@@ -75,7 +109,12 @@ const ProductDetail = () => {
             e.currentTarget.style.transform = 'scale(1)';
           }}
         >Add to Cart</button>
+        <div style={{ height: '20px' }}></div>
         {isAdded && <p style={{ color: 'white', fontSize: '22px' }}>Item successfully added!</p>}
+        <div style={{ height: '20px' }}></div>
+        <div className="relatedItems">
+      {renderProductItems(previewAllItems)}
+    </div>
       </div>
       <Footer />
     </div>
