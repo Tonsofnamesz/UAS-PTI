@@ -215,10 +215,8 @@
     right: 10%; 
     font-size: 80px;
     font-family: 'Cyberpunk';
-    text-shadow: 0 0 4px #00c6ff,
-              0 0 14px #00c6ff,
-              0 0 24px #00c6ff,
-              0 0 34px #00c6ff;
+    text-shadow: 0 0 4px #00c8ffb2,
+              0 0 34px #00c8ffb2;
   }
 
   .WebTitle3 {
@@ -231,8 +229,6 @@
     font-size: 80px;
     font-family: 'Cyberpunk';
     text-shadow: 0 0 4px #edfbff,
-              0 0 14px #edfbff,
-              0 0 24px #edfbff,
               0 0 34px #edfbff;
   }
 
