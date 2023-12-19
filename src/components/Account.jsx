@@ -95,7 +95,8 @@ const Account = () => {
                 id="userName"
                 name="userName"
                 value={userData.userName}
-                onChange={handleInputChange}
+                  onChange={handleInputChange}
+                  className="input-field"
             />
             </div>
             <div>
@@ -142,7 +143,7 @@ const Account = () => {
                 className="input-field"
               />
               </div>
-              <button type="submit">Save Changes</button>
+              <button type="submit" className="styled-button">Save Changes</button>
             </div>
           </form>
         );
@@ -157,6 +158,7 @@ const Account = () => {
                 name="password"
                 value={userData.password}
                 onChange={handleInputChange}
+                className="input-field"
               />
           </div>
           <div>
@@ -167,6 +169,7 @@ const Account = () => {
                 name="newPassword"
                 value={userData.newPassword}
                 onChange={handleInputChange}
+                className="input-field"
               />
           </div>
           <div>
@@ -177,9 +180,10 @@ const Account = () => {
                 name="verifyNewPassword"
                 value={userData.verifyNewPassword}
                 onChange={handleInputChange}
+                className="input-field"
               />
           </div>
-          <button onClick={handlePasswordChange}>Save Changes</button>
+          <button onClick={handlePasswordChange} className="styled-button">Save Changes</button>
         </form>
         );
         case "OrderHistory":
@@ -197,7 +201,7 @@ const Account = () => {
                           {order.items.map((item, i) => (
                             <li key={i}>
                               <img src={item.image} alt={item.name} style={{ width: '50px', height: '50px' }} />
-                              <p className="itemName">{item.name}</p>
+                              <p className="itemName">{item.title}</p>
                               <p>
                                 Price: ${item.price} x {item.quantity} = ${(item.price * item.quantity).toFixed(2)}
                               </p>
